@@ -1,10 +1,15 @@
 # react-setup
-**just another lightweight react setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS**
+**Just another lightweight React setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS, ESLint.**
 
 ## More Features
 * code coverage with [isparta](https://github.com/douglasduteil/isparta)
 * eslint configuration
 * development and production build
+
+## Questions & Issues
+
+* File an [Issue](issue)
+* Join the [Chat room](https://gitter.im/ngduc/react-setup)
 
 ## Usage
 
@@ -46,4 +51,5 @@ npm run lint
 ## Contributing
 
 PR and issues reporting are always welcome :)
+
 Follow [CONTRIBUTING.md](CONTRIBUTING.md)

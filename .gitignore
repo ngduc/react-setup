@@ -1,0 +1,6 @@
+node_modules
+.DS_Store
+dist
+*.log
+test/coverage
+gh-pages

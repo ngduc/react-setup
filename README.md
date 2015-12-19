@@ -1,4 +1,6 @@
 # react-setup
+
+[![Join the chat at https://gitter.im/ngduc/react-setup](https://badges.gitter.im/ngduc/react-setup.svg)](https://gitter.im/ngduc/react-setup?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 **just another lightweight react setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS**
 
 ## More Features

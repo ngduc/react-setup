@@ -8,19 +8,19 @@ export default class PxUtil {
    */
   static findParentByChild(child, selector) {
     let el = child;
-    let isClassName = (selector[0] === '.' ? true : false);
-    let isId = (selector[0] === '#' ? true : false);
+    const isClassName = (selector[0] === '.' ? true : false);
+    const isId = (selector[0] === '#' ? true : false);
     if (isId || isClassName) {
       selector = selector.slice(1);
     }
     el = el.parentElement;
     while (el) {
-      let classes = el.getAttribute('class');
+      const classes = el.getAttribute('class');
       // console.log(isId, el.getAttribute('id'), isClassName, classes);
       if ((isId && el.getAttribute('id') === selector) ||
           (isClassName && classes && classes.split(' ').indexOf(selector) >= 0) ||
           (el.tagName === selector.toUpperCase())) {
-            break;
+        break;
       }
       el = el.parentElement;
     }

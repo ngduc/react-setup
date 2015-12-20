@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "just another react setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",
@@ -71,7 +71,7 @@
     "postcss-loader": "0.8.0",
     "postcss-modules-values": "1.1.1",
     "postcss-nested": "1.0.0",
-    "px-test-utils": "^1.0.1",
+    "px-test-utils": "1.0.2",
     "react-addons-test-utils": "0.14.3",
     "react-transform-catch-errors": "1.0.0",
     "react-transform-hmr": "1.0.1",

@@ -1,10 +1,11 @@
 # react-setup
-**Just another lightweight React setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS, ESLint.**
+**A lightweight React setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS, ESLint.**
 
 ## More Features
-* code coverage with [isparta](https://github.com/douglasduteil/isparta)
-* eslint configuration
-* development and production build
+* Babel ES6: class syntax
+* Code coverage with [isparta](https://github.com/douglasduteil/isparta)
+* ESLint configuration
+* Development and production build
 
 ## Questions & Issues
 
@@ -28,7 +29,12 @@ npm start
 npm test
 ```
 
-**Generate code coverage report**
+Run tests in watch mode
+```
+npm run test:watch
+```
+
+Generate code coverage report**
 ```
 npm run test:cov
 ```

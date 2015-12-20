@@ -1,13 +1,16 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import style from './App.css';
 
 const App = ({ children }) =>
-  <div>
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link></li>
-    </ul>
-    {children}
+  <div className={style.app}>
+    <nav>
+      <span><Link to="/">Home</Link></span>
+      <span><Link to="/about">About</Link></span>
+    </nav>
+    <div className={style.appBody}>
+      {children}
+    </div>
   </div>;
 
 App.propTypes = typeof __DEV__ && {

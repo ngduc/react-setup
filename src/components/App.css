@@ -1,0 +1,14 @@
+.app {
+  font-family: Verdana;
+  nav {
+    display: flex;
+    list-style: none;
+    span {
+      margin-right: 20px;
+    }
+  }
+
+  .appBody {
+    margin-top: 10px;
+  }
+}

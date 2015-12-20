@@ -19,7 +19,7 @@ The commit message formatting using ([Commitizen](https://github.com/commitizen/
 ### Commit Message Format
 
 ```
-<type> (<scope>): <subject>
+<type>: (<scope>:) <subject>
 ```
 
 The **header** is mandatory and the **scope** of the header is optional.
@@ -45,7 +45,7 @@ Must be one of the following:
   generation
 
 ### Scope
-The scope could be anything specifying place of the commit change. For example: homepage, about, router, server, build, etc...
+The scope could be anything specifying place of the commit change. For example: component, homepage, about, router, server, build, etc...
 
 ### Subject
 The subject contains succinct description of the change:

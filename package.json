@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "just another react setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",

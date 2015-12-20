@@ -30,12 +30,12 @@ export default class PxPopover extends React.Component {
     } else {
       showFlag = true;
     }
-    this._toggle(PxUtils.findParentByChild(el, 'SECTION'), showFlag);
+    this._toggle(PxUtils.findParentByChild(el, 'section'), showFlag);
   }
 
   keyDownHandler = (e) => {
     if (e.keyCode === 27) {
-      this._toggle(PxUtils.findParentByChild(e.target, 'SECTION'), false);
+      this._toggle(PxUtils.findParentByChild(e.target, 'section'), false);
     }
   }
 

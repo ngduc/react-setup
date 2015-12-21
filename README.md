@@ -1,5 +1,7 @@
 # react-setup
-**A lightweight React setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS, ESLint.**
+**A lightweight React setup: React, React Router, Babel, Mocha, Webpack HMR, PostCSS, ESLint.**
+
+I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Koa, etc.) to bake your project :)
 
 ## More Features
 * Babel ES6: class syntax
@@ -34,7 +36,7 @@ Run tests in watch mode
 npm run test:watch
 ```
 
-Generate code coverage report**
+Generate code coverage report
 ```
 npm run test:cov
 ```

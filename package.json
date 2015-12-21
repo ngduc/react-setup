@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "just another react setup: React, React Router, BabelJS, Mocha, Webpack HMR, PostCSS",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",
@@ -31,7 +31,6 @@
     "boilerplate"
   ],
   "dependencies": {
-    "basscss": "7.1.0",
     "fastclick": "1.0.6",
     "history": "1.13.1",
     "normalize.css": "3.0.3",

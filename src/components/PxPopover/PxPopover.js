@@ -5,9 +5,8 @@ import PxUtils from '../PxUtils/PxUtils';
 import style from './PxPopover.css';
 
 /**
- * PxPopover component contains Trigger element & Content element.
- * - source: https://github.com/ngduc
- * - usage:
+ * PxPopover component contains Trigger element, Overlay element & Content element.
+ * - source: https://github.com/ngduc - usage:
  * <PxPopover>
  *   <div data-trigger><button>Show Popover</button></div>
  *   <div data-content>My Content <button data-dismiss>Close</button></div>
@@ -19,10 +18,10 @@ export default class PxPopover extends React.Component {
   }
 
   componentDidMount() {
-    this._toggle(ReactDOM.findDOMNode(this), false);
+    this._toggle(ReactDOM.findDOMNode(this), false); // initially hide overlay & content.
   }
 
-  clickHandler = (e) => {
+  onClick = (e) => {
     let showFlag;
     const el = e.target;
     if (el.getAttribute('data-overlay') || el.getAttribute('data-dismiss')) {
@@ -33,7 +32,7 @@ export default class PxPopover extends React.Component {
     this._toggle(PxUtils.findParentByChild(el, 'section'), showFlag);
   }
 
-  keyDownHandler = (e) => {
+  onKeyDown = (e) => {
     if (e.keyCode === 27) {
       this._toggle(PxUtils.findParentByChild(e.target, 'section'), false);
     }
@@ -46,12 +45,11 @@ export default class PxPopover extends React.Component {
   }
 
   render() {
-    const { showed } = this.state;
     return (
-      <section className={style.popover} onClick={this.clickHandler} onKeyDown={this.keyDownHandler}>
+      <section className={style.popover} onClick={this.onClick} onKeyDown={this.onKeyDown}>
         {this.props.children[0]}
-        <div className={style.popoverOverlay} data-overlay></div>
-        <div className={style.popoverContent}>
+        <div className={style.overlay} data-overlay></div>
+        <div className={style.content}>
           {this.props.children[1]}
         </div>
       </section>

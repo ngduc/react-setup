@@ -3,6 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
@@ -16,6 +17,10 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new CopyWebpackPlugin([{
+      from: 'src/static',
+      to: 'static'
+    }]),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',

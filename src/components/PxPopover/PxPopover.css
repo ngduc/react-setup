@@ -1,5 +1,6 @@
 .popover {
   position: relative;
+  display: inline-block;
 
   .overlay {
     position: fixed;

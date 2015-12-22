@@ -1,13 +1,13 @@
 # react-setup
-**A lightweight React setup: React, React Router, Babel, Mocha, Webpack HMR, PostCSS, ESLint.**
+**A lightweight React setup: React, React Router, React Boostrap, Babel, Mocha, Webpack HMR, PostCSS, ESLint.**
 
 I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Koa, etc.) to bake your project :)
 
 ## More Features
 * Babel ES6: class syntax for React components
 * Code coverage with [isparta](https://github.com/douglasduteil/isparta)
-* ESLint configuration
-* Development and production build
+* ESLint ES6 configuration
+* Development and Production build
 
 ## Questions & Issues
 

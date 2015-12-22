@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A lightweight React setup: React, React Router, React Boostrap, Babel, Mocha, Webpack HMR, PostCSS, ESLint",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",

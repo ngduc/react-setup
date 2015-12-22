@@ -7,6 +7,7 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 * Babel ES6: class syntax for React components
 * Code coverage with [isparta](https://github.com/douglasduteil/isparta)
 * ESLint ES6 configuration
+* Debug ES6 code with webpack
 * Development and Production build
 
 ## Questions & Issues

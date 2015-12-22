@@ -1,3 +1,5 @@
+@import '../styles/base.css';
+
 *:focus {
   box-shadow: none;
   outline: -webkit-focus-ring-color auto 1px !important;
@@ -5,7 +7,8 @@
 
 .app {
   font-family: Verdana;
-  font-size: 13px;
+  font-size: $text-size;
+  color: $text-color;
 
   nav {
     display: flex;

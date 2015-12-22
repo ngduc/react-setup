@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Home.css';
 
-import PxPopover from './PxPopover/PxPopover';
+import { PxPopover } from '../../components/index';
 
 export default class Home extends React.Component {
   render() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
-import App from './components/App';
 
-import Home from './components/Home';
-import About from './components/About';
+import App from './App';
+import Home from './Home/Home';
+import About from './About/About';
 
 const routes = (
   <Route component={ App }>

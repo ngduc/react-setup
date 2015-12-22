@@ -4,7 +4,7 @@
 I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Koa, etc.) to bake your project :)
 
 ## More Features
-* Babel ES6: class syntax
+* Babel ES6: class syntax for React components
 * Code coverage with [isparta](https://github.com/douglasduteil/isparta)
 * ESLint configuration
 * Development and production build

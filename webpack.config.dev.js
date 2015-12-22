@@ -45,7 +45,9 @@ module.exports = {
   postcss: [
     require('postcss-modules-values'),
     require('autoprefixer'),
-    require('postcss-nested')
+    require('postcss-import'),
+    require('postcss-nested'),
+    require('postcss-simple-vars')
   ],
   _hotPort: 8000
 };

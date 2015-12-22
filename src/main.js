@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import Router from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import attachFastClick from 'fastclick';
-import routes from './routes';
+
+import routes from './app/routes';
 
 // Remove 300ms tap delay on mobile devices
 attachFastClick.attach(document.body);

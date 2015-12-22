@@ -9,6 +9,7 @@
   font-family: Verdana;
   font-size: $text-size;
   color: $text-color;
+  margin: 10px;
 
   nav {
     display: flex;
@@ -20,13 +21,5 @@
 
   .appBody {
     margin-top: 10px;
-  }
-
-  button {
-    width: 100px;
-    height: 25px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background-color: #eee;
   }
 }

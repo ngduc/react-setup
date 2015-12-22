@@ -3,6 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 
@@ -16,6 +17,10 @@ module.exports = {
     filename: '[name]-[hash].min.js'
   },
   plugins: [
+    new CopyWebpackPlugin([{
+      from: 'src/static',
+      to: 'static'
+    }]),
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
@@ -52,7 +57,10 @@ module.exports = {
     }]
   },
   postcss: [
+    require('postcss-modules-values'),
     require('autoprefixer'),
-    require('postcss-modules-values')
+    require('postcss-import'),
+    require('postcss-nested'),
+    require('postcss-simple-vars')
   ]
 };

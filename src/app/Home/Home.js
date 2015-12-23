@@ -1,5 +1,5 @@
 import React from 'react';
-import { injectIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { injectIntl, defineMessages, FormattedMessage, FormattedDate } from 'react-intl';
 
 import settings from '../settings.json';
 import { PxPopover } from '../components/index';
@@ -19,7 +19,11 @@ class Home extends React.Component {
   render() {
     return (
       <section className={style.section}>
-        <span><FormattedMessage {...msg.title}/> - {settings.app_title}</span>
+        <div>
+          <FormattedMessage {...msg.title}/> - {settings.app_title}</div>
+        <div>
+          Locale demo: Today is: <FormattedDate value={new Date()} day="numeric" month="long" year="numeric" />
+        </div>
         <p></p>
 
         <PxPopover>

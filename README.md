@@ -11,6 +11,8 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 * Debug ES6 code with webpack
 * Development and Production build
 
+[[https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.png|alt=demo]]
+
 ## Questions & Issues
 
 * File an [Issue](https://github.com/ngduc/react-setup/issues)

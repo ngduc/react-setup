@@ -1,4 +1,5 @@
 import React from 'react';
+import { injectIntl, defineMessages, FormattedMessage } from 'react-intl';
 
 import settings from '../settings.json';
 import { PxPopover } from '../components/index';
@@ -6,11 +7,19 @@ import { Button } from 'react-bootstrap';
 
 import style from './Home.css';
 
-export default class Home extends React.Component {
+// i18n strings for this component - https://goo.gl/abldHf
+const msg = defineMessages({
+  title: {
+    id: 'home.title',
+    defaultMessage: 'Home Page'
+  }
+});
+
+class Home extends React.Component {
   render() {
     return (
       <section className={style.section}>
-        <span>Home Page - {settings.app_title}</span>
+        <span><FormattedMessage {...msg.title}/> - {settings.app_title}</span>
         <p></p>
 
         <PxPopover>
@@ -27,3 +36,5 @@ export default class Home extends React.Component {
     );
   }
 }
+
+export default injectIntl(Home);

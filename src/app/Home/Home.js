@@ -1,19 +1,12 @@
 import React from 'react';
-import { injectIntl, defineMessages, FormattedMessage, FormattedDate } from 'react-intl';
+import { injectIntl, FormattedMessage, FormattedDate } from 'react-intl';
 
 import settings from '../settings.json';
 import { PxPopover } from '../components/index';
 import { Button } from 'react-bootstrap';
 
 import style from './Home.css';
-
-// i18n strings for this component - https://goo.gl/abldHf
-const msg = defineMessages({
-  title: {
-    id: 'home.title',
-    defaultMessage: 'Home Page'
-  }
-});
+import msg from './messages';
 
 class Home extends React.Component {
   render() {

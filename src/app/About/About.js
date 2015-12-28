@@ -1,16 +1,15 @@
 import React from 'react';
-import { injectIntl, FormattedMessage } from 'react-intl';
 
-import msg from './messages';
+import { Msg, __injectIntl } from './messages';
 
 class About extends React.Component {
   render() {
     return (
       <section>
-        <span><FormattedMessage {...msg.title}/></span>
+        <span><Msg s="title"/></span>
       </section>
     );
   }
 }
 
-export default injectIntl(About);
+export default __injectIntl(About);

@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.3.1",
+  "version": "1.3.5",
   "description": "A lightweight React setup: Babel, React, React Router, React Boostrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",
@@ -19,6 +19,7 @@
     "test:watch": "npm test -- -w",
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover --verbose --report text --report html --dir ./test/coverage $(npm bin)/_mocha -- --require ./test/test-init src/**/*.spec.js",
     "start": "node devServer",
+    "build:msg": "babel --plugins react-intl src/app/**/messages.js",
     "build:start": "NODE_ENV=production node prodServer",
     "build": "rimraf dist && NODE_ENV=production webpack --config webpack.config.prod.js --progress --profile --colors",
     "lint": "eslint .",

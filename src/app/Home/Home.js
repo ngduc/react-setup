@@ -1,21 +1,23 @@
 import React from 'react';
-import { injectIntl, FormattedMessage, FormattedDate } from 'react-intl';
+import { FormattedDate } from 'react-intl';
 
 import settings from '../settings.json';
 import { PxPopover } from '../components/index';
 import { Button } from 'react-bootstrap';
 
 import style from './Home.css';
-import msg from './messages';
+import { Msg, __injectIntl } from './messages';
 
 class Home extends React.Component {
+  //<FormattedMessage {...msg.title}/> - {settings.app_title}</div>
   render() {
     return (
       <section className={style.section}>
         <div>
-          <FormattedMessage {...msg.title}/> - {settings.app_title}</div>
+          <Msg s="title"/> - {settings.app_title}
+        </div>
         <div>
-          Locale demo: Today is: <FormattedDate value={new Date()} day="numeric" month="long" year="numeric" />
+          <Msg s="today"/> <FormattedDate value={new Date()} day="numeric" month="long" year="numeric" />
         </div>
         <p></p>
 
@@ -34,4 +36,4 @@ class Home extends React.Component {
   }
 }
 
-export default injectIntl(Home);
+export default __injectIntl(Home);

@@ -45,6 +45,11 @@ Generate code coverage report
 npm run test:cov
 ```
 
+**Build language files**
+```
+npm run build:msg
+```
+
 **Build for production**
 ```
 npm run build

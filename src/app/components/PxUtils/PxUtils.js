@@ -1,5 +1,4 @@
-
-export default class PxUtil {
+export default class PxUtils {
   /**
    * Find a parent element by traversing up.
    * @param  {object} child     - dom element
@@ -16,7 +15,6 @@ export default class PxUtil {
     el = el.parentElement;
     while (el) {
       const classes = el.getAttribute('class');
-      // console.log(isId, el.getAttribute('id'), isClassName, classes);
       if ((isId && el.getAttribute('id') === selector) ||
           (isClassName && classes && classes.split(' ').indexOf(selector) >= 0) ||
           (el.tagName === selector.toUpperCase())) {
@@ -29,7 +27,7 @@ export default class PxUtil {
 
   /**
    * Toggle element by setting display style to 'block' or 'none'
-   * @example - toggle({ overlayEl, show: false });
+   * @example - toggle({ overlayEl: el, show: false });
    * @param  {object} param - object parameter { name: domEl, show: boolean }
    */
   static toggle(param) {

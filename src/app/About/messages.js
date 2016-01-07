@@ -1,8 +1,7 @@
 import React from 'react';
-import { injectIntl, defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
-// i18n strings for this component - https://goo.gl/abldHf
-const messages = defineMessages({
+const messages = defineMessages({ // i18n strings for this component - https://goo.gl/abldHf
   title: {
     id: 'about.title',
     defaultMessage: 'About Page'
@@ -10,4 +9,3 @@ const messages = defineMessages({
 });
 
 export const Msg = (props) => <FormattedMessage { ...messages[ props.s ] }/>;
-export const __injectIntl = (el) => injectIntl(el);

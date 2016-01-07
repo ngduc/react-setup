@@ -1,6 +1,7 @@
 import React from 'react';
+import { injectIntl } from 'react-intl';
 
-import { Msg, __injectIntl } from './messages';
+import { Msg } from './messages';
 
 class About extends React.Component {
   render() {
@@ -12,4 +13,4 @@ class About extends React.Component {
   }
 }
 
-export default __injectIntl(About);
+export default injectIntl(About);

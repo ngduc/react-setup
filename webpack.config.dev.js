@@ -5,7 +5,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-import { messagesJsonString } from './tools/i18n'; // to have messages for injecting, run this first: "$ npm run build:msg"
+import { getLocaleMessages } from './tools/i18n'; // to have messages for injecting, run this first: "$ npm run build:msg"
+const messagesJsonString = getLocaleMessages('en-US');
 
 module.exports = {
   devtool: 'inline-source-map',

@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A lightweight React setup: Babel, React, React Router, React Boostrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",
@@ -60,7 +60,6 @@
     "copy-webpack-plugin": "^0.3.3",
     "css-loader": "0.23.1",
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^2.1.1",
     "eslint-plugin-react": "3.14.0",
     "express": "4.13.3",
     "extract-text-webpack-plugin": "1.0.1",

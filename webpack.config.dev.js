@@ -5,6 +5,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+import { messagesJsonString } from './tools/i18n'; // to have messages for injecting, run this first: "$ npm run build:msg"
+
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
@@ -24,7 +26,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.html'
+      filename: 'index.html',
+      i18nMessages: messagesJsonString || 'undefined'
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

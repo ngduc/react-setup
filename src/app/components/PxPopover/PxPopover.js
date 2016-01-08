@@ -15,7 +15,7 @@ import style from './PxPopover.css';
 export default class PxPopover extends React.Component {
   state = {
     showed: false
-  }
+  };
 
   componentDidMount() {
     this._toggle(ReactDOM.findDOMNode(this), false); // initially hide overlay & content.
@@ -30,19 +30,19 @@ export default class PxPopover extends React.Component {
       showFlag = true;
     }
     this._toggle(PxUtils.findParentByChild(el, 'section'), showFlag);
-  }
+  };
 
   onKeyDown = (e) => {
     if (e.keyCode === 27) {
       this._toggle(PxUtils.findParentByChild(e.target, 'section'), false);
     }
-  }
+  };
 
   _toggle = (mainEl, showFlag) => {
     this.setState({ showed: showFlag });
     PxUtils.toggle({ overlayEl: mainEl.children[1], show: showFlag });
     PxUtils.toggle({ contentEl: mainEl.children[2], show: showFlag });
-  }
+  };
 
   render() {
     return (

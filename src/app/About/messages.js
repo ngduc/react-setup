@@ -8,4 +8,4 @@ const messages = defineMessages({ // i18n strings for this component - https://g
   }
 });
 
-export const Msg = (props) => <FormattedMessage { ...messages[ props.s ] }/>;
+export const Msg = (props) => <FormattedMessage { ...messages[ props.s ] } values={ props.values }/>;

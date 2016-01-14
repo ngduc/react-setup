@@ -13,10 +13,10 @@ class Home extends React.Component {
     return (
       <section className={style.section}>
         <div>
-          <Msg s="title"/> - {settings.app_title}
+          <Msg s="welcome" values={{ page: 'Home Page' }}/> - {settings.app_title}
         </div>
         <div>
-          <Msg s="today"/> <FormattedDate value={new Date()} day="numeric" month="long" year="numeric" />
+          <Msg s="today"/> <FormattedDate value={ new Date() } day="numeric" month="long" year="numeric" />
         </div>
         <p></p>
 

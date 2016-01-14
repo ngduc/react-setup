@@ -25,7 +25,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.html'
+      filename: 'index.tpl.html',
+      i18nMessages: '__i18nMessages__'
     }),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({

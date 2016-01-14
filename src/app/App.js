@@ -10,7 +10,7 @@ import style from './App.css';
 addLocaleData(enLocaleData);
 addLocaleData(jaLocaleData);
 
-const currentLocale = window.App.locale;
+const currentLocale = window.App.locale; // injected in index.tpl.html
 const messages = window.App.messages;
 addLocaleData({
   locale: currentLocale,

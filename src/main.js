@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { Router, browserHistory } from 'react-router'
 import attachFastClick from 'fastclick';
 
 import routes from './app/routes';
@@ -9,11 +8,9 @@ import routes from './app/routes';
 // Remove 300ms tap delay on mobile devices
 attachFastClick.attach(document.body);
 
-const history = createBrowserHistory();
-
 ReactDOM.render(
   <Router
     children={routes}
-    history={history} />,
+    history={browserHistory} />,
   document.getElementById('root')
 );

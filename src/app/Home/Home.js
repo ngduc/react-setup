@@ -20,7 +20,7 @@ class Home extends React.Component {
         </div>
         <p></p>
         <div>
-          Switch locale: (only work in PROD build for now)
+          Switch locale:
         </div>
         <ul>
           <li><a href="/?loc=en-US">English en-US</a></li>

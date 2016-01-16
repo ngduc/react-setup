@@ -20,7 +20,7 @@
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover --verbose --report text --report html --dir ./test/coverage $(npm bin)/_mocha -- --require ./test/test-init src/**/*.spec.js",
     "start": "babel-node devServer",
     "build:msg": "babel --plugins react-intl src/app/**/messages.js && babel-node tools/scripts/translate.js",
-    "build:start": "NODE_ENV=production babel-node prodServer",
+    "build:start": "NODE_ENV=production node prodServer",
     "build": "rimraf dist && NODE_ENV=production webpack --config webpack.config.prod.js --progress --profile --colors && npm run build:msg",
     "lint": "eslint .",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",

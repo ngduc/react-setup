@@ -25,7 +25,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.tpl.html',
+      filename: 'index.html',
       i18nMessages: '__i18nMessages__'
     }),
     new ExtractTextPlugin('[name]-[hash].min.css'),

@@ -3,6 +3,8 @@
 
 I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Koa, etc.) to bake your project :)
 
+[![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
+
 ## More Features
 * I18n with [React-intl](https://github.com/yahoo/react-intl)
 * Babel ES6: class syntax for React components
@@ -11,7 +13,7 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 * Debug ES6 code with webpack
 * Development and Production build
 
-![alt tag](https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.png)
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.png" width="420">
 
 ## Questions & Issues
 
@@ -23,6 +25,11 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 **Install**
 ```
 npm install
+```
+
+Require other commands
+```
+npm install eslint -g
 ```
 
 **Start the application in dev mode with hot-module-replacement**

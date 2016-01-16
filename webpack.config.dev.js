@@ -27,7 +27,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.tpl.html',
+      filename: 'index.html',
       i18nMessages: messagesJsonString || 'undefined'
     }),
     new webpack.optimize.OccurenceOrderPlugin(),

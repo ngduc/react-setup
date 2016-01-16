@@ -28,6 +28,7 @@
     "space-after-keywords": 2,
     "space-infix-ops": 2,
     "object-curly-spacing": [2, "always"],
+    "comma-spacing": [2, {"before": false, "after": true}],
     "no-trailing-spaces": 2,
     "comma-dangle": 2,
     "wrap-iife": 2,

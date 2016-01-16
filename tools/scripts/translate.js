@@ -7,7 +7,7 @@ from 'mkdirp';
 import Translator from './lib/translator';
 
 const MESSAGES_PATTERN = './dist/messages/**/*.json';
-const LANG_DIR = './dist/lang/';
+const LANG_DIR = './dist/static/lang/';
 
 // Aggregates the default messages that were extracted from the example app's
 // React components via the React Intl Babel plugin. An error will be thrown if

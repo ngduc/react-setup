@@ -4,7 +4,7 @@ import { sync as globSync } from 'glob';
 import { readFileSync } from 'fs';
 import serialize from 'serialize-javascript';
 
-const translations = globSync('./dist/lang/*.json')
+const translations = globSync('./dist/static/lang/*.json')
     .map((filename) => [
       path.basename(filename, '.json'),
       readFileSync(filename, 'utf8')

@@ -19,6 +19,13 @@ class Home extends React.Component {
           <Msg s="today"/> <FormattedDate value={ new Date() } day="numeric" month="long" year="numeric" />
         </div>
         <p></p>
+        <div>
+          Switch locale: (only work in PROD build for now)
+        </div>
+        <ul>
+          <li><a href="/?loc=en-US">English en-US</a></li>
+          <li><a href="/?loc=ja-JP">Japanese ja-JP</a></li>
+        </ul>
 
         <PxPopover>
           <div data-trigger>

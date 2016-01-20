@@ -24,15 +24,11 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 
 **Install**
 ```
+npm install eslint -g
 npm install
 ```
 
-Require other commands
-```
-npm install eslint -g
-```
-
-**Start the application in dev mode with hot-module-replacement**
+**Start the application in DEV mode with hot-module-replacement**
 ```
 npm start
 ```
@@ -40,10 +36,6 @@ npm start
 **Run tests**
 ```
 npm test
-```
-
-Run tests in watch mode
-```
 npm run test:watch
 ```
 

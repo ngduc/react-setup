@@ -13,7 +13,7 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 * Debug ES6 code with webpack
 * Development and Production build
 
-<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.png" width="420">
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" height="280" >
 
 ## Questions & Issues
 

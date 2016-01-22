@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A lightweight React setup: Babel, React, React Router, React Boostrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",
@@ -92,7 +92,7 @@
     "stats-webpack-plugin": "0.3.0",
     "style-loader": "0.13.0",
     "webpack": "1.12.11",
-    "webpack-dev-middleware": "1.4.0",
+    "webpack-dev-middleware": "1.5.0",
     "webpack-hot-middleware": "2.6.0"
   },
   "config": {

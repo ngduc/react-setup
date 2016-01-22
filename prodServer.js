@@ -22,7 +22,7 @@ app.get('*', (req, res) => {
   res.send(data);
 });
 
-app.listen(8000, 'localhost', (err) => {
+app.listen(8000, (err) => {
   if (err) {
     console.log(err);
   }

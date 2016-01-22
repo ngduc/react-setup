@@ -3,7 +3,7 @@ FROM node:5.4.1
 
 # Install apt deps
 RUN apt-get update \
-    && apt-get install -y wget unzip libelf1 git
+    && apt-get install -y lsof wget unzip libelf1 git
 
 # Create app directory
 RUN mkdir -p /opt/app

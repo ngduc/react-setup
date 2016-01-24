@@ -1,6 +1,6 @@
 {
   "name": "react-setup",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "A lightweight React setup: Babel, React, React Router, React Boostrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint",
   "private": true,
   "author": "Duc Ng (https://github.com/ngduc)",
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/ngduc/react-setup",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --require ./test/test-init --compilers js:babel-core/register ./src/**/*.spec.js",
+    "test": "NODE_ENV=test mocha -t 4000 --require ./test/test-init --compilers js:babel-core/register ./src/**/*.spec.js",
     "test:watch": "npm test -- -w",
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover --verbose --report text --report html --dir ./test/coverage $(npm bin)/_mocha -- --require ./test/test-init src/**/*.spec.js",
     "start": "babel-node devServer",
@@ -85,14 +85,14 @@
     "react-transform-catch-errors": "1.0.1",
     "react-transform-hmr": "1.0.1",
     "redbox-react": "1.2.0",
-    "rimraf": "2.5.0",
+    "rimraf": "2.5.1",
     "serialize-javascript": "^1.1.2",
     "sinon": "1.17.2",
     "sinon-chai": "2.8.0",
     "stats-webpack-plugin": "0.3.0",
     "style-loader": "0.13.0",
     "teaspoon": "^6.1.1",
-    "webpack": "1.12.11",
+    "webpack": "1.12.12",
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.6.0"
   },

@@ -1,17 +1,10 @@
-# https://registry.hub.docker.com/_/node/
-FROM node:5.4.1
-
-# Install apt deps
-RUN apt-get update \
-    && apt-get install -y lsof wget unzip libelf1 git
+# https://github.com/ngduc/docker
+FROM ngduc/deb-dev
 
 ADD ./package.json /tmp
 RUN cd /tmp \
   && npm install
 RUN ln -s /tmp/node_modules node_modules
-
-RUN npm install eslint -g
-
 
 WORKDIR /src
 

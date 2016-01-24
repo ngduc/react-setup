@@ -1,9 +1,5 @@
-# https://registry.hub.docker.com/_/node/
-FROM node:5.4.1
-
-# Install apt deps
-RUN apt-get update \
-    && apt-get install -y lsof wget unzip libelf1 git
+# https://github.com/ngduc/docker
+FROM ngduc/deb-dev
 
 # Create app directory
 RUN mkdir -p /opt/app
@@ -11,7 +7,6 @@ WORKDIR /opt/app
 
 # Install app dependencies
 COPY package.json /opt/app
-RUN npm install eslint -g
 RUN npm install
 
 # Bundle app source

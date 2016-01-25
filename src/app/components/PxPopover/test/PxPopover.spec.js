@@ -1,12 +1,10 @@
 import React from 'react';
-import jsdom from 'mocha-jsdom';
 import TestUtils from 'react-addons-test-utils';
 import PxTestUtils from 'px-test-utils';
 
 import PxPopover from '../PxPopover';
 
 describe('PxPopover', () => {
-  jsdom();
   let renderer;
   let $el;
   const reactEl = (<PxPopover>

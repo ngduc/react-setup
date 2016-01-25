@@ -1,5 +1,4 @@
 import React from 'react';
-import jsdom from 'mocha-jsdom';
 import { TestUtils, createRenderer } from 'react-addons-test-utils';
 import $ from 'teaspoon';
 
@@ -8,7 +7,6 @@ import { IntlProvider } from 'react-intl';
 import About from '../About';
 
 describe('About', () => {
-  jsdom();
   const renderer = createRenderer();
   const intlProvider = new IntlProvider({ locale: 'en' }, {});
   let $el;

@@ -1,7 +1,6 @@
 import React from 'react';
-import { TestUtils, createRenderer } from 'react-addons-test-utils';
+import { createRenderer } from 'react-addons-test-utils';
 import $ from 'teaspoon';
-
 import { IntlProvider } from 'react-intl';
 
 import About from '../About';

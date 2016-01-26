@@ -1,11 +1,11 @@
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
-import PxTestUtils from 'px-test-utils';
+import TestUtils, { createRenderer } from 'react-addons-test-utils';
+import $ from 'teaspoon';
 
 import PxPopover from '../PxPopover';
 
 describe('PxPopover', () => {
-  let renderer;
+  const renderer = createRenderer();
   let $el;
   const reactEl = (<PxPopover>
                     <div data-trigger><button>Show Popover</button></div>
@@ -13,7 +13,8 @@ describe('PxPopover', () => {
                   </PxPopover>);
 
   beforeEach(() => {
-    [ renderer, $el ] = PxTestUtils.render(reactEl);
+    renderer.render(reactEl);
+    $el = $(renderer.getRenderOutput()).render();
   });
 
   it('should have 3 child elements: trigger, overlay, content (in order)', () => {

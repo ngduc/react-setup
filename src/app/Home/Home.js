@@ -2,7 +2,7 @@ import React from 'react';
 import { injectIntl, FormattedDate } from 'react-intl';
 
 import { Button } from 'react-bootstrap';
-import { PxPopover, PxUtils } from '../components/index';
+import { PxPopover, PxUtils } from '../components';
 
 import settings from '../settings.json';
 import style from './Home.css';

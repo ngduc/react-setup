@@ -6,11 +6,10 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 
-//import { getLocaleMessages } from './tools/i18n';
 const i18n = require('./tools/i18n');
 
-// don't use default index.html to avoid conflict with app.get '*' function.
-app.use(express.static(__dirname + '/dist', { index: 'index.dummy' }));
+// use dummy index so app.get('*') can handle the root url (instead of serving dist/index.html raw file)
+app.use(express.static(__dirname + '/dist', { index: 'dummy_file' }));
 
 app.get('*', (req, res) => {
   const locale = req.query.loc || 'en-US';

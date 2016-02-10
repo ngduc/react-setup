@@ -1,17 +1,20 @@
 'use strict';
+require('babel-core/register'); // so we can use babel for other files except this file.
 
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-import { getLocaleMessages } from './tools/i18n'; // to have messages for injecting, run this first: "$ npm run build:msg"
-const messagesJsonString = getLocaleMessages('en-US');
+//import { getLocaleMessages } from './tools/i18n'; // to have messages for injecting, run this first: "$ npm run build:msg"
+var i18n = require('./tools/i18n');
+var messagesJsonString = i18n.getLocaleMessages('en-US');
 
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-hot-middleware/client',
+    "webpack-dev-server/client?http://localhost:8000/",
+    "webpack/hot/only-dev-server",
     path.join(__dirname, 'src/main.js')
   ],
   output: {
@@ -58,5 +61,17 @@ module.exports = {
     require('postcss-nested'),
     require('postcss-simple-vars')
   ],
-  _hotPort: 8000
+  _hotPort: 8000,
+  devServer: {
+    publicPath: 'http://localhost:8000/',
+        hot:        true,
+        inline:     false,
+        lazy:       false,
+        quiet:      true,
+        noInfo:     true,
+        headers:    {"Access-Control-Allow-Origin": "*"},
+        stats:      {colors: true},
+        port: 8000,
+        host: 'localhost'
+  }
 };

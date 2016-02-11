@@ -3,5 +3,7 @@ node_modules
 .idea
 dist
 *.log
+lib
+public
 test/coverage
 gh-pages

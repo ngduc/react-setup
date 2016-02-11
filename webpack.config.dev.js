@@ -1,62 +1,44 @@
+/* eslint-disable */
 'use strict';
-
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-import { getLocaleMessages } from './tools/i18n'; // to have messages for injecting, run this first: "$ npm run build:msg"
-const messagesJsonString = getLocaleMessages('en-US');
+var _port = 3001;
+var _webpackDevPort = 3009;
+
+process.env._PORT = _port;
+process.env._WEBPACK_DEV_PORT = _webpackDevPort;
 
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-hot-middleware/client',
-    path.join(__dirname, 'src/main.js')
+    'webpack-dev-server/client?http://localhost:' + _webpackDevPort,
+    'webpack/hot/only-dev-server',
+    './src/client/app'
   ],
   output: {
-    path: path.join(__dirname, '/dist/'),
-    filename: '[name].js',
-    publicPath: '/'
+    path: path.join(__dirname, '/public/js/'),
+    filename: 'app.js',
+    publicPath: 'http://localhost:'+ _webpackDevPort + '/js/'
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: 'src/static',
-      to: 'static'
-    }]),
-    new HtmlWebpackPlugin({
-      template: 'src/index.tpl.html',
-      inject: 'body',
-      filename: 'index.html',
-      i18nMessages: messagesJsonString || 'undefined'
-    }),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-      '__DEV__': JSON.stringify(process.env.NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env._PORT': _port
     })
   ],
+  resolve: {
+    extensions: ['', '.js']
+  },
   module: {
     loaders: [{
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: 'babel'
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }, {
-      test: /\.css$/,
-      loader: 'style!css?modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss'
+      test: /\.js$/,
+      loaders: ['react-hot', 'babel?stage=0&experimental&optional[]=runtime'],
+      exclude: /node_modules/
     }]
   },
-  postcss: [
-    require('postcss-modules-values'),
-    require('autoprefixer'),
-    require('postcss-import'),
-    require('postcss-nested'),
-    require('postcss-simple-vars')
-  ],
-  _hotPort: 8000
+  _webpackDevPort: _webpackDevPort,
+  _port: _port
 };

@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Redux Counter Example App</title>
-    <meta name="description" content="">
+    <title>react-setup</title>
+    <meta name="description" content="react-setup">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div id="App">{{ appString | safe }}</div>
 
-    <script>window.__initialState = {{ initialState | safe }}</script>
+    <script>
+      window.__initialState = {{ initialState | safe }};
+    </script>
     {% if env.NODE_ENV == 'development' %}
       <script src="http://localhost:{{ env._WEBPACK_DEV_PORT }}/js/app.js" defer></script>
     {% else %}

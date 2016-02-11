@@ -10,22 +10,21 @@ import CounterApp from '../shared/apps';
 nunjucks.configure('views', { autoescape: true });
 
 export default function counter() {
-  return function* () {
+  return async (ctx, next) => {
     const store = create(reducers);
-    yield store.dispatch(loadCounter());
-    var state = store.getState();
+    await store.dispatch(loadCounter());
+    const state = store.getState();
 
     const appString = React.renderToString(
       <Provider store={store}>
-        {()=><CounterApp {...state} />}
+        {() => <CounterApp {...state} />}
       </Provider>
     );
 
-    this.body = nunjucks.render('index.html', {
+    ctx.body = nunjucks.render('index.html', {
       appString,
-      initialState:JSON.stringify(state),
-      env:process.env
+      initialState: JSON.stringify(state),
+      env: process.env
     });
   };
 }
-

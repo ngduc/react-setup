@@ -1,24 +1,19 @@
-import koa from 'koa';
-import bodyparser from 'koa-bodyparser';
-import route from 'koa-route';
-import compose from 'koa-compose';
+import Koa from 'koa';
+import Router from 'koa-router';
 
-let server_count = 0;
-
-const app = koa()
-  .use(bodyparser())
-  .use(route.get('/api/count', function* () {
-    this.body = server_count;
-  }))
-  .use(route.post('/api/count/inc', function* () {
-    this.body = ++server_count;
-  }))
-  .use(route.post('/api/count/dec', function* () {
-    this.body = --server_count;
-  }))
-;
+let serverCount = 0;
 
 export default function () {
-  return compose(app.middleware);
-}
+  let router = new Router();
 
+  router.get('/api/count', async (ctx, next) => {
+    ctx.body = serverCount;
+  });
+  router.post('/api/count/inc', async (ctx, next) => {
+    ctx.body = ++serverCount;
+  });
+  router.post('/api/count/dec', async (ctx, next) => {
+    ctx.body = --serverCount;
+  });
+  return router.routes();
+}

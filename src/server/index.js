@@ -1,7 +1,6 @@
 global.__CLIENT__ = false;
 global.__SERVER__ = true;
 
-import 'babel/polyfill';
 import Koa from 'koa';
 import Router from 'koa-router';
 import serveStatic from 'koa-serve-static';

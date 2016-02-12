@@ -12,6 +12,7 @@ process.env._WEBPACK_DEV_PORT = _webpackDevPort;
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
+    'babel-polyfill',
     'webpack-dev-server/client?http://localhost:' + _webpackDevPort,
     'webpack/hot/only-dev-server',
     './src/client/app'
@@ -35,8 +36,8 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel?stage=0&experimental&optional[]=runtime'],
-      exclude: /node_modules/
+      exclude: /node_modules/,
+      loaders: ['react-hot', 'babel']
     }]
   },
   _webpackDevPort: _webpackDevPort,

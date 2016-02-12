@@ -4,7 +4,7 @@ import Router from 'koa-router';
 let serverCount = 0;
 
 export default function () {
-  let router = new Router();
+  const router = new Router();
 
   router.get('/api/count', async (ctx, next) => {
     ctx.body = serverCount;

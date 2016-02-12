@@ -1,7 +1,6 @@
 window.__CLIENT__ = true;
 window.__SERVER__ = false;
 
-import 'babel/polyfill';
 import React from 'react';
 import { Provider } from 'react-redux';
 
@@ -14,7 +13,7 @@ const store = create(reducers, state);
 
 React.render(
   <Provider store={store}>
-    {()=><CounterApp />}
+    {() => <CounterApp />}
   </Provider>,
   document.getElementById('App')
 );

@@ -1,5 +1,5 @@
 # react-setup
-**A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.**
+**A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, InlineCSS/PostCSS, ESLint.**
 
 I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
@@ -16,7 +16,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Development: HMR for both client & server
 * Production ready
 
-<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" height="416" >
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="400" height="315" >
 
 ## Questions & Issues
 

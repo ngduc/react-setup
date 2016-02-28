@@ -1,7 +1,7 @@
-node_modules
+.idea/
+node_modules/
+dist/
+static/
 .DS_Store
-.idea
-dist
 *.log
-test/coverage
-gh-pages
+*.map

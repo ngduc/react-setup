@@ -25,7 +25,7 @@
     "space-unary-ops": 2,
     "no-multi-spaces": 2,
     "space-before-blocks": 2,
-    "space-after-keywords": 2,
+    "keyword-spacing": 2,
     "space-infix-ops": 2,
     "object-curly-spacing": [2, "always"],
     "comma-spacing": [2, {"before": false, "after": true}],
@@ -34,7 +34,7 @@
     "wrap-iife": 2,
     "no-extra-semi": 2,
     "semi-spacing": 2,
-    "semi": 2,
+    "semi": [2, "never"],
     "func-names": 2,
 
     // NodeJs rules

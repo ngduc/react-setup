@@ -1,0 +1,14 @@
+/* --- shared common variables ---*/
+$TEXT_COLOR: #333;
+$LINK_COLOR: blue;
+
+body {
+  padding: 10px;
+  color: $TEXT_COLOR;
+  font-family: Arial;
+}
+
+:global a {
+  text-decoration: none;
+  color: $LINK_COLOR;
+}

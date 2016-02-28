@@ -1,17 +1,20 @@
 # react-setup
-**A lightweight React setup: Babel, React, React Router, React Boostrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.**
+**A lightweight Universal React setup: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.**
 
-I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Koa, etc.) to bake your project :)
+I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
 [![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
 
 ## More Features
 * I18n with [React-intl](https://github.com/yahoo/react-intl)
-* Babel ES6: class syntax for React components
+* Babel ES6 & class syntax for React components
+* Server rendering with React Transmit
+* Inline CSS or PostCSS: your choice :)
 * Code coverage with [isparta](https://github.com/douglasduteil/isparta)
 * ESLint ES6 configuration
-* Debug ES6 code with webpack
-* Development and Production build
+* Debug ES6 code with Webpack
+* Development: HMR for both client & server
+* Production ready
 
 <img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" height="280" >
 
@@ -24,13 +27,14 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 
 **Install**
 ```
+npm install babel-cli -g
 npm install eslint -g
 npm install
 ```
 
-**Start the application in DEV mode with hot-module-replacement**
+**Start the application in DEV mode with Hot-Module-Replacement**
 ```
-npm start
+npm run dev
 ```
 
 **Run tests**
@@ -44,24 +48,9 @@ Generate code coverage report
 npm run test:cov
 ```
 
-**Build language files**
+**Build & Start Production**
 ```
-npm run build:msg
-```
-
-**Build for production**
-```
-npm run build
-```
-
-**Run production version**
-```
-npm run build:start
-```
-
-**Run eslint**
-```
-npm run lint
+npm run build && npm start
 ```
 
 ## Contributing

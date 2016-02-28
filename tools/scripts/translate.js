@@ -1,13 +1,13 @@
 // source: https://github.com/yahoo/react-intl/blob/master/examples/translations/scripts/translate.js
+require('babel-core/register'); // so we can use babel for other files except this file.
+
 import * as fs from 'fs';
-import { sync as globSync }
-from 'glob';
-import { sync as mkdirpSync }
-from 'mkdirp';
+import { sync as globSync } from 'glob';
+import { sync as mkdirpSync } from 'mkdirp';
 import Translator from './lib/translator';
 
 const MESSAGES_PATTERN = './dist/messages/**/*.json';
-const LANG_DIR = './dist/static/lang/';
+const LANG_DIR = './static/translations/';
 
 // Aggregates the default messages that were extracted from the example app's
 // React components via the React Intl Babel plugin. An error will be thrown if

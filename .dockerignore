@@ -1,8 +1,0 @@
-dist/
-node_modules/
-Dockerfile
-docker-compose.yml
-.git
-.gitignore
-LICENSE
-README.md

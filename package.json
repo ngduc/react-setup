@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
-  "description": "A lightweight Universal React setup: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.0.1",
+  "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
+  "version": "2.0.2",
   "author": "Duc Ng (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "babel-polyfill": "6.5.0",
-    "fetch-plus": "3.6.1",
+    "fetch-plus": "3.7.0",
     "fetch-plus-bearerauth": "3.5.0",
     "fetch-plus-json": "3.6.0",
     "isomorphic-fetch": "2.2.1",
@@ -69,8 +69,8 @@
     "babel": "6.5.2",
     "babel-cli": "^6.5.1",
     "babel-core": "6.5.2",
-    "babel-loader": "6.2.3",
-    "babel-plugin-react-intl": "2.0.0",
+    "babel-loader": "6.2.4",
+    "babel-plugin-react-intl": "2.1.1",
     "babel-preset-es2015": "6.5.0",
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.0",
@@ -99,7 +99,7 @@
     "style-loader": "^0.13.0",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1",
-    "webpack-node-externals": "0.4.1"
+    "webpack-node-externals": "1.0.0"
   },
   "engines": {
     "node": ">=0.10.32"

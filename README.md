@@ -1,7 +1,7 @@
 # react-setup
-**A lightweight Universal React setup: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.**
+**A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.**
 
-I prefer to keep this setup lightweight but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
+I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
 [![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
 
@@ -16,7 +16,7 @@ I prefer to keep this setup lightweight but feel free to sprinkle some more pixi
 * Development: HMR for both client & server
 * Production ready
 
-<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" height="280" >
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" height="416" >
 
 ## Questions & Issues
 

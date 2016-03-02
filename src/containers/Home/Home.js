@@ -36,7 +36,7 @@ class Home extends React.Component {
 
   render () {
     return (
-        <div className={styles.home}>
+        <section className={styles.home}>
           <NavBar />
 
           <h3>Home</h3>
@@ -56,7 +56,7 @@ class Home extends React.Component {
           <div>Post 1 - Title: "{this.state.data.title}"</div>
 
           <CommentBox data={this.state.commentBoxData}/>
-        </div>
+        </section>
     )
   }
 
@@ -72,5 +72,4 @@ class Home extends React.Component {
   }
 }
 
-const fragments = Utils.getTransmitFragments(fragmentArr)
-export default Transmit.createContainer(Home, { initialVariables: {}, fragments })
+export default Utils.createTransmitContainer(Home, fragmentArr)

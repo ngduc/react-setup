@@ -37,7 +37,8 @@
     "watch-server": "node node_modules/webpack/bin/webpack --watch --verbose --colors --display-error-details --config configs/webpack.server-watch.js",
     "watch-server-start": "node node_modules/just-wait --pattern \"dist/*.js\" && npm run start",
     "watch-client": "node node_modules/webpack-dev-server/bin/webpack-dev-server --config configs/webpack.client-watch.js",
-    "dev": "rm -rf ./dist && rm -rf ./static && node node_modules/concurrently/src/main --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\""
+    "dev": "rm -rf ./dist && rm -rf ./static && node node_modules/concurrently/src/main --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\"",
+    "test": "NODE_PATH=./src mocha  --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive"
   },
   "dependencies": {
     "babel-polyfill": "6.5.0",
@@ -61,7 +62,7 @@
     "react-inline-css": "2.1.0",
     "react-intl": "^2.0.0-beta-2",
     "react-router": "2.0.0",
-    "react-transmit": "3.1.7",
+    "react-transmit": "https://github.com/ngduc/react-transmit.git",
     "serialize-javascript": "^1.1.2"
   },
   "devDependencies": {
@@ -76,6 +77,7 @@
     "babel-preset-react-hmre": "1.1.0",
     "babel-preset-stage-0": "6.5.0",
     "bootstrap": "^3.3.6",
+    "chai": "^3.5.0",
     "classnames": "^2.2.3",
     "concurrently": "2.0.0",
     "copy-webpack-plugin": "^1.1.1",
@@ -85,9 +87,11 @@
     "glob": "^7.0.0",
     "html-webpack-plugin": "^2.9.0",
     "intl-messageformat-parser": "^1.2.0",
+    "jsdom": "^8.1.0",
     "json-loader": "0.5.4",
     "just-wait": "1.0.5",
     "mkdirp": "^0.5.1",
+    "mocha": "^2.4.5",
     "postcss-cssnext": "^2.4.0",
     "postcss-import": "8.0.2",
     "postcss-loader": "^0.8.1",
@@ -96,7 +100,11 @@
     "postcss-nested": "1.0.0",
     "postcss-simple-vars": "1.2.0",
     "react-addons-css-transition-group": "^0.14.7",
+    "react-addons-test-utils": "^0.14.7",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.0",
+    "teaspoon": "^6.1.2",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1",
     "webpack-node-externals": "1.0.0"

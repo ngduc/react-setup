@@ -5,7 +5,7 @@ import { NavBar } from 'components'
 import { Msg } from './messages'
 
 export default class About extends React.Component {
-  render() {
+  render () {
     return (
       <div>
         <NavBar />

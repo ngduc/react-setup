@@ -1,3 +1,5 @@
+import Transmit from 'react-transmit'
+
 export default class Utils {
   /**
    * Find a parent element by traversing up.
@@ -5,7 +7,7 @@ export default class Utils {
    * @param  {string} selector  - selector to find parent. e.g. '#id123' or '.content' or 'div'
    * @return {object}           - return parent dom element
    */
-  static findParentByChild(child, selector) {
+  static findParentByChild (child, selector) {
     let el = child
     const isClassName = (selector[0] === '.' ? true : false)
     const isId = (selector[0] === '#' ? true : false)
@@ -30,12 +32,12 @@ export default class Utils {
    * @example - toggle({ overlayEl: el, show: false })
    * @param  {object} param - object parameter { name: domEl, show: boolean }
    */
-  static toggle(param) {
+  static toggle (param) {
     const el = param[ Object.keys(param)[0] ] // first param object.
     el.style.display = (param.show ? 'block' : 'none')
   }
 
-  static getTransmitFragments(fragmentArr) {
+  static getTransmitFragments (fragmentArr) {
     return fragmentArr.reduce((res, item) => {
       const key = Object.keys(item)[0]
       const fragmentParams = item[key]
@@ -44,7 +46,7 @@ export default class Utils {
     }, {})
   }
 
-  static fetchFragmentsToState(fragmentArr, ctx, callbackFn) {
+  static fetchFragmentsToState (fragmentArr, ctx, callbackFn) {
     fragmentArr.map(item => {
       const key = Object.keys(item)[0]
       const fragmentParams = item[ key ]
@@ -53,8 +55,15 @@ export default class Utils {
         const state = {}
         state[ key ] = data
         ctx.setState(state)
-        if (callbackFn) callbackFn(key, data)
+        if (callbackFn) {
+          callbackFn(key, data)
+        }
       })
     })
+  }
+
+  static createTransmitContainer (Component, fragmentArr) {
+    const fragments = this.getTransmitFragments(fragmentArr)
+    return Transmit.createContainer(Component, { initialVariables: {}, fragments })
   }
 }

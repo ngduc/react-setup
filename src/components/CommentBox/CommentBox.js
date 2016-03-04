@@ -4,28 +4,23 @@ import Transmit from 'react-transmit'
 
 import dataService from 'apis/dataService'
 
-const _fetchInitialData = (id) => {
-  return dataService.browse(['posts', id, 'comments'], {})
-    .catch(error => {
-      throw error
-    })
+const fetchInitialData = (id) => {
+  return dataService.browse(['posts', id, 'comments'], {}).catch(error => { throw error })
 }
-// -------------------------------------------------------------------------------- //
 
 /**
  * Main React application entry-point for both the server and client.
  */
 class CommentBox extends React.Component {
-  // run on Server & Client.
   componentWillMount () {
+    // run on Server & Client.
   }
-
-  // run on Client only.
   componentDidUpdate (prevProps, prevState) {
+    // run on Client only.
   }
 
-  // run on Server & Client.
   render () {
+    // run on Server & Client.
     const { data } = this.props
 
     return (
@@ -55,7 +50,6 @@ class CommentBox extends React.Component {
 		`)
   }
 }
-
-CommentBox.fetchInitialData = _fetchInitialData
+CommentBox.fetchInitialData = fetchInitialData
 
 export default CommentBox

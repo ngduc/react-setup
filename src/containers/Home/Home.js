@@ -10,17 +10,13 @@ import dataService from 'apis/dataService'
 import { Msg } from './messages'
 import styles from './styles.css'
 
-const _fetchInitialData = (id) => {
-  return dataService.read(['posts', id], {})
-    .catch(error => {
-      throw error
-    })
+const fetchInitialData = (id) => {
+  return dataService.read(['posts', id], {}).catch(error => { throw error })
 }
 const fragmentArr = [
-  { data: [_fetchInitialData, 3] },
+  { data: [fetchInitialData, 3] },
   { commentBoxData: [CommentBox.fetchInitialData, 3] }
 ]
-// -------------------------------------------------------------------------------- //
 
 class Home extends React.Component {
   state = { data: {}, commentBoxData: {} }
@@ -52,23 +48,11 @@ class Home extends React.Component {
             <Button><Msg s="rateGreat" /></Button>
           </ButtonGroup>
           <hr />
-
           <div>Post 1 - Title: "{this.state.data.title}"</div>
 
           <CommentBox data={this.state.commentBoxData}/>
         </section>
     )
-  }
-
-  static css () {
-    return (`
-			& {
-				font-family: sans-serif;
-				padding: 5px;
-				margin: 5px auto;
-				background: #eee;
-			}
-		`)
   }
 }
 

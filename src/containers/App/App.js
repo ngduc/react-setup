@@ -3,8 +3,8 @@ import { addLocaleData, IntlProvider } from 'react-intl'
 
 import '../baseStyles.css'
 
-import enLocaleData from '../../../node_modules/react-intl/lib/locale-data/en'
-import jaLocaleData from '../../../node_modules/react-intl/lib/locale-data/ja'
+import enLocaleData from 'react-intl/locale-data/en'
+import jaLocaleData from 'react-intl/locale-data/ja'
 
 addLocaleData(enLocaleData)
 addLocaleData(jaLocaleData)

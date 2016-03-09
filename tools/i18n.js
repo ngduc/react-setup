@@ -13,10 +13,13 @@ const translations = globSync('./static/translations/*.json')
     .reduce((collection, [locale, messages]) => {
       collection[locale] = messages;
       return collection;
-    }, {});
+    }, {})
 
-export function getLocaleMessages(locale) {
+export function getTranslations () {
+  return translations
+}
+
+export function getLocaleMessages (locale) {
   const messages = translations[locale]
-  const data = JSON.stringify({ 'locale': locale, 'messages': messages })
-  return data
+  return { locale, messages }
 }

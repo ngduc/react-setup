@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.0.2",
+  "version": "2.0.5",
   "author": "Duc Ng (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -38,7 +38,7 @@
     "watch-server-start": "node node_modules/just-wait --pattern \"dist/*.js\" && npm run start",
     "watch-client": "node node_modules/webpack-dev-server/bin/webpack-dev-server --config configs/webpack.client-watch.js",
     "dev": "rm -rf ./dist && rm -rf ./static && node node_modules/concurrently/src/main --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\"",
-    "test": "NODE_PATH=./src mocha  --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive"
+    "test": "NODE_PATH=./src mocha --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive"
   },
   "dependencies": {
     "babel-polyfill": "6.5.0",
@@ -87,6 +87,7 @@
     "glob": "^7.0.0",
     "html-webpack-plugin": "^2.9.0",
     "intl-messageformat-parser": "^1.2.0",
+    "isparta": "^4.0.0",
     "jsdom": "^8.1.0",
     "json-loader": "0.5.4",
     "just-wait": "1.0.5",

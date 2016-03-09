@@ -8,7 +8,7 @@ const messages = defineMessages({  // i18n strings for this component - https://
   },
   today: {
     id: 'home.today',
-    defaultMessage: '"Locale demo" - Today\'s'
+    defaultMessage: '"Locale demo" - Today\'s a great day!'
   },
   rateMeh: {
     id: 'home.rateMeh',

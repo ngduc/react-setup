@@ -37,7 +37,7 @@ class Home extends React.Component {
 
           <h3>Home</h3>
           <p><Msg s="welcome" values={{ page: 'Home Page' }}/></p>
-          <p><Msg s="today"/> <FormattedDate value={ new Date() } day="numeric" month="long" year="numeric" /></p>
+          <p><Msg s="today"/></p>
           <ul>
             <li><a href="/?locale=en-US">English en-US</a></li>
             <li><a href="/?locale=ja-JP">Japanese ja-JP</a></li>

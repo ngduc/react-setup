@@ -18,4 +18,4 @@ module.exports = (
       <Route path='/about' foo="bar" component={ About } />
     </Route>
   </Router>
-);
+)

@@ -4,29 +4,27 @@ import React from 'react'
 import { RouterContext, match } from 'react-router'
 import Transmit from 'react-transmit'
 
-const i18n = require('../../tools/i18n')
-
-import routesContainer from '../containers/routes'
-const routes = routesContainer
+import routes from '../containers/routes'
 
 const hostname = process.env.HOSTNAME || 'localhost'
 const IGNORED_FILES = ['/favicon.ico']
 const INDEX_TEMPLATE_FILE = 'dist/views/index.tpl.html'
 
-const indexHtml = fs.readFileSync(INDEX_TEMPLATE_FILE).toString()
+const indexFileContent = fs.readFileSync(INDEX_TEMPLATE_FILE).toString()
+const i18n = require('../../tools/i18n')
 const i18nObj = { locale: '', messages: {} }
 
 
-export default function renderAppRouter() {
+export default function renderAppRouter () {
   return (ctx, next) => new Promise((resolve, reject) => {
-    if (IGNORED_FILES.indexOf(ctx.request.url) >= 0) {
+    const location = ctx.request.url
+    if (IGNORED_FILES.indexOf(location) >= 0) {
       return next()
     }
     i18nObj.locale = ctx.query.locale || 'en-US'
-    const messagesJsonString = i18n.getLocaleMessages(i18nObj.locale)
+    const messagesJsonString = JSON.stringify(i18n.getLocaleMessages(i18nObj.locale))
 
-
-    match({ routes, location: ctx.request.url }, (error, redirectLocation, renderProps) => {
+    match({ routes, location }, (error, redirectLocation, renderProps) => {
       if (redirectLocation) {
         ctx.redirect(redirectLocation.pathname + redirectLocation.search, '/')
         resolve()
@@ -40,11 +38,11 @@ export default function renderAppRouter() {
         const webserver = (process.env.NODE_ENV === 'production' ? '' : '//' + hostname + ':8080')
 
         Transmit.renderToString(RouterContext, renderProps).then(({ reactString, reactData }) => {
-          const template = mustache.render(indexHtml, {
+          const renderedHtml = mustache.render(indexFileContent, {
             i18n: messagesJsonString,
             reactString
           })
-          const output = Transmit.injectIntoMarkup(template, reactData, [`${webserver}/client.js`])
+          const output = Transmit.injectIntoMarkup(renderedHtml, reactData, [`${webserver}/client.js`])
           ctx.body = output
           resolve()
         })

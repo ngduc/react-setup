@@ -1,4 +1,5 @@
 import babelPolyfill from 'babel-polyfill'
+require('../tools/node-locales')
 
 import Koa from 'koa'
 import Router from 'koa-router'
@@ -12,10 +13,10 @@ import apiRouter from './server/apiRouter'
 import renderAppRouter from './server/renderAppRouter'
 
 try {
-	const app      = new Koa()
+	const app = new Koa()
 	const hostname = process.env.HOSTNAME || 'localhost'
-	const port     = process.env.PORT || 8000
-	let   routes   = routesContainer
+	const port = process.env.PORT || 8000
+	let routes = routesContainer
 
   app.use(koaCompress({ flush: require('zlib').Z_SYNC_FLUSH }))
 

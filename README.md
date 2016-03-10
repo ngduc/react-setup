@@ -1,5 +1,5 @@
 # react-setup
-**A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, InlineCSS/PostCSS, ESLint.**
+**A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack HMR, InlineCSS/PostCSS, ESLint.**
 
 I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
@@ -7,7 +7,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 ## More Features
 * I18n with [React-intl](https://github.com/yahoo/react-intl)
-* Babel ES6 & class syntax for React components
+* Babel ES6, ES2015
 * Server rendering with React Transmit
 * Inline CSS or PostCSS: your choice :)
 * Code coverage with [isparta](https://github.com/douglasduteil/isparta)
@@ -40,12 +40,7 @@ npm run dev
 **Run tests**
 ```
 npm test
-npm run test:watch
-```
-
-Generate code coverage report
-```
-npm run test:cov
+npm run test-cov
 ```
 
 **Build & Start Production**

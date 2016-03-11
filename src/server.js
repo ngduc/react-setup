@@ -1,5 +1,5 @@
 import babelPolyfill from 'babel-polyfill'
-require('../tools/node-locales')
+require('server/libs/node-locales')
 
 import Koa from 'koa'
 import Router from 'koa-router'

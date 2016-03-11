@@ -14,7 +14,7 @@ let currentLocale
 let messages
 
 if (!__CLIENT__) {
-  const i18n = require('../../../tools/i18n')
+  const i18n = require('server/libs/i18n')
   translations = i18n.getTranslations()
 }
 
@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <IntlProvider locale={currentLocale} messages={messages}>
+      <IntlProvider locale={currentLocale} defaultLocale="en-US" messages={messages}>
         <div>
           {this.props.children}
         </div>

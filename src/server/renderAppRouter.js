@@ -11,7 +11,7 @@ const IGNORED_FILES = ['/favicon.ico']
 const INDEX_TEMPLATE_FILE = 'dist/views/index.tpl.html'
 
 const indexFileContent = fs.readFileSync(INDEX_TEMPLATE_FILE).toString()
-const i18n = require('../../tools/i18n')
+const i18n = require('./libs/i18n')
 const i18nObj = { locale: '', messages: {} }
 
 

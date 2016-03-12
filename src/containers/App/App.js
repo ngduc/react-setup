@@ -13,12 +13,12 @@ let currentLocale
 let messages
 
 if (!__CLIENT__) {
-  const i18n = require('server/libs/i18n')
+  const i18n = require('server/libs/i18n') // eslint-disable-line global-require
   translations = i18n.getTranslations()
 }
 
 export default class App extends React.Component {
-  componentWillMount() {
+  componentWillMount () {
     if (__CLIENT__) {
       currentLocale = (__CLIENT__ ? window.App.locale : 'en-US')
       messages = window.App.messages
@@ -32,7 +32,7 @@ export default class App extends React.Component {
     })
   }
 
-  render() {
+  render () {
     return (
       <IntlProvider locale={currentLocale} defaultLocale="en-US" messages={messages}>
         <div>

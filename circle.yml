@@ -9,3 +9,4 @@ dependencies:
 test:
   override:
     - npm run test
+    - npm run lint

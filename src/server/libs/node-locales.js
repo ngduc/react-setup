@@ -1,5 +1,6 @@
 // locales for Node
 // http://formatjs.io/guides/runtime-environments/#polyfill-node
+/* eslint-disable global-require */
 
 const localesMyAppSupports = ['en', 'ja']
 

@@ -1,13 +1,13 @@
 // source: https://github.com/yahoo/react-intl/blob/master/examples/translations/scripts/translate.js
-require('babel-core/register'); // so we can use babel for other files except this file.
+require('babel-core/register') // so we can use babel for other files except this file.
 
-import * as fs from 'fs';
-import { sync as globSync } from 'glob';
-import { sync as mkdirpSync } from 'mkdirp';
-import Translator from './lib/translator';
+import * as fs from 'fs'
+import { sync as globSync } from 'glob'
+import { sync as mkdirpSync } from 'mkdirp'
+import Translator from './lib/translator'
 
-const MESSAGES_PATTERN = './dist/messages/**/*.json';
-const LANG_DIR = './static/translations/';
+const MESSAGES_PATTERN = './dist/messages/**/*.json'
+const LANG_DIR = './static/translations/'
 
 // Aggregates the default messages that were extracted from the example app's
 // React components via the React Intl Babel plugin. An error will be thrown if
@@ -21,27 +21,27 @@ const defaultMessages = globSync(MESSAGES_PATTERN)
       id, defaultMessage
     }) => {
       if (collection.hasOwnProperty(id)) {
-        throw new Error(`Duplicate message id: ${id}`);
+        throw new Error(`Duplicate message id: ${id}`)
       }
-      collection[id] = defaultMessage;
-    });
+      collection[id] = defaultMessage
+    })
 
-    return collection;
-  }, {});
+    return collection
+  }, {})
 
 // For the purpose of this example app a fake locale: `en-UPPER` is created and
 // the app's default messages are "translated" into this new "locale" by simply
 // UPPERCASING all of the message text. In a real app this would be through some
 // offline process to get the app's messages translated by machine or
 // processional translators.
-const uppercaseTranslator = new Translator((text) => text.toUpperCase());
+const uppercaseTranslator = new Translator((text) => text.toUpperCase())
 const uppercaseMessages = Object.keys(defaultMessages)
   .map((id) => [id, defaultMessages[id]])
   .reduce((collection, [id, defaultMessage]) => {
-    collection[id] = uppercaseTranslator.translate(defaultMessage);
-    return collection;
-  }, {});
+    collection[id] = uppercaseTranslator.translate(defaultMessage)
+    return collection
+  }, {})
 
-mkdirpSync(LANG_DIR);
-fs.writeFileSync(LANG_DIR + 'en-US.json', JSON.stringify(defaultMessages, null, 2));
-fs.writeFileSync(LANG_DIR + 'en-UPPER.json', JSON.stringify(uppercaseMessages, null, 2));
+mkdirpSync(LANG_DIR)
+fs.writeFileSync(LANG_DIR + 'en-US.json', JSON.stringify(defaultMessages, null, 2))
+fs.writeFileSync(LANG_DIR + 'en-UPPER.json', JSON.stringify(uppercaseMessages, null, 2))

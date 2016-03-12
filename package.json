@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "author": "Duc Ng (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -40,7 +40,7 @@
     "dev": "rm -rf ./dist && rm -rf ./static && node node_modules/concurrently/src/main --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\"",
     "test": "NODE_PATH=./src mocha --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive",
     "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover --verbose --report text --report html $(npm bin)/_mocha -- --require ./tools/test/test-init src/**/*.spec.js",
-    "lint": "eslint src/**"
+    "lint": "$(npm bin)/eslint src/**"
   },
   "dependencies": {
     "babel-polyfill": "6.7.2",
@@ -87,7 +87,7 @@
     "concurrently": "2.0.0",
     "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
-    "eslint": "^2.4.0",
+    "eslint": "2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "forever": "0.15.1",
     "glob": "^7.0.3",

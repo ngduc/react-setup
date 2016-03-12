@@ -8,7 +8,7 @@ import Home from './Home'
 
 describe('Home', () => {
   const renderer = createRenderer()
-  const intlProvider = new IntlProvider({ locale: 'en-US' }, {})
+  const intlProvider = new IntlProvider({ locale: 'en-US', defaultLocale: 'en-US' }, {})
   let $el
   const OriginalHome = Home.getComponent()
   const reactEl = (<IntlProvider><OriginalHome/></IntlProvider>)

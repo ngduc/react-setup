@@ -35,7 +35,7 @@ class Home extends React.Component {
       <section className={styles.home}>
         <NavBar />
 
-        <h3>Home</h3>
+        <h3><Msg s="title"/></h3>
         <p><Msg s="welcome" values={{ page: 'Home Page' }}/></p>
         <p><Msg s="today"/> <FormattedDate value={ new Date() } day="numeric" month="numeric" year="numeric" /></p>
         <ul>

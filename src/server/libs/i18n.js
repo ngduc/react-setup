@@ -5,15 +5,15 @@ import { readFileSync } from 'fs'
 import serialize from 'serialize-javascript'
 
 const translations = globSync('static/translations/*.json')
-    .map((filename) => [
-      path.basename(filename, '.json'),
-      readFileSync(filename, 'utf8')
-    ])
-    .map(([locale, file]) => [locale, JSON.parse(file)])
-    .reduce((collection, [locale, messages]) => {
-      collection[locale] = messages;
-      return collection;
-    }, {})
+  .map((filename) => [
+    path.basename(filename, '.json'),
+    readFileSync(filename, 'utf8')
+  ])
+  .map(([locale, file]) => [locale, JSON.parse(file)])
+  .reduce((collection, [locale, messages]) => {
+    collection[locale] = messages
+    return collection
+  }, {})
 
 export function getTranslations () {
   return translations

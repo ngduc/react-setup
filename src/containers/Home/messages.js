@@ -2,6 +2,10 @@ import React from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
 
 const messages = defineMessages({  // i18n strings for this component - https://goo.gl/abldHf
+  title: {
+    id: 'home.title',
+    defaultMessage: 'Home'
+  },
   welcome: {
     id: 'home.welcome',
     defaultMessage: 'Welcome to {page}'

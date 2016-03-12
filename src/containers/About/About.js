@@ -10,7 +10,7 @@ export default class About extends React.Component {
       <div>
         <NavBar />
 
-        <h3>About</h3>
+        <h3><Msg s="title"/></h3>
 
         <p><Msg s="intro"/></p>
       </div>

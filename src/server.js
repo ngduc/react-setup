@@ -1,4 +1,4 @@
-import babelPolyfill from 'babel-polyfill'
+require('babel-polyfill')
 require('server/libs/node-locales')
 
 import Koa from 'koa'

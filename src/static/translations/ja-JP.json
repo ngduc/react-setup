@@ -1,7 +1,11 @@
 {
+  "nav.home": "ホーム",
+  "nav.about": "約",
+  "home.title": "ホームページ",
   "home.welcome": "ようこそ {page}",
   "home.today": "\"ロケールデモ\" - 今日は素晴らしい日です",
-  "about.intro": "ページについて",
+  "about.title": "ページについて",
+  "about.intro": "導入",
   "home.rateMeh": "まあまあ",
   "home.rateOk": "平均",
   "home.rateGreat": "すばらしいです！"

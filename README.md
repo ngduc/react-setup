@@ -5,6 +5,8 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 [![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
 
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="400" height="308" >
+
 ## More Features
 * I18n with [React-intl](https://github.com/yahoo/react-intl)
 * Babel ES6, ES2015
@@ -15,8 +17,6 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Debug ES6 code with Webpack
 * Development: HMR for both client & server
 * Production ready
-
-<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="400" height="315" >
 
 ## Questions & Issues
 

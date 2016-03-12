@@ -2,13 +2,13 @@ import React from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
 
 const messages = defineMessages({  // i18n strings for this component - https://goo.gl/abldHf
-  title: {
-    id: 'about.title',
-    defaultMessage: 'About'
+  navHome: {
+    id: 'nav.home',
+    defaultMessage: 'Home'
   },
-  intro: {
-    id: 'about.intro',
-    defaultMessage: 'About Page'
+  navAbout: {
+    id: 'nav.about',
+    defaultMessage: 'About'
   }
 })
 

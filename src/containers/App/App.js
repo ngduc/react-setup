@@ -5,7 +5,6 @@ import '../baseStyles.css'
 
 import enLocaleData from 'react-intl/locale-data/en'
 import jaLocaleData from 'react-intl/locale-data/ja'
-
 addLocaleData(enLocaleData)
 addLocaleData(jaLocaleData)
 

@@ -68,7 +68,8 @@
     "react-intl": "2.0.0-rc-1",
     "react-router": "2.0.1",
     "react-transmit": "https://github.com/ngduc/react-transmit.git",
-    "serialize-javascript": "^1.2.0"
+    "serialize-javascript": "^1.2.0",
+    "forever": "0.15.1"
   },
   "devDependencies": {
     "autoprefixer": "6.3.3",
@@ -90,7 +91,6 @@
     "css-loader": "^0.23.1",
     "eslint": "2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "forever": "0.15.1",
     "glob": "^7.0.3",
     "html-webpack-plugin": "^2.10.0",
     "intl-messageformat-parser": "^1.2.0",
@@ -118,6 +118,6 @@
     "webpack-node-externals": "1.0.0"
   },
   "engines": {
-    "node": ">=0.10.32"
+    "node": ">=4.2.4"
   }
 }

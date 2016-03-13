@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -30,7 +30,8 @@
   "main": "dist/server.js",
   "scripts": {
     "postinstall": "npm run build",
-    "start": "node $(npm bin)/forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
+    "start": "node --harmony ./dist/server.js",
+    "start-forever": "node $(npm bin)/forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
     "build-msg": "babel --plugins react-intl src/**/messages.js && babel-node tools/scripts/translate.js",
     "build-server": "node $(npm bin)/webpack --colors --display-error-details --config configs/webpack.server.js",
     "build-client": "node $(npm bin)/webpack --colors --display-error-details --config configs/webpack.client.js",

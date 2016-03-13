@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -37,7 +37,7 @@
     "build-client": "webpack --colors --display-error-details --config configs/webpack.client.js",
     "build": "npm run clean && concurrently \"npm run build-server\" \"npm run build-client\" \"npm run build-msg\"",
     "watch-server": "webpack --watch --verbose --colors --display-error-details --config configs/webpack.server-watch.js",
-    "watch-server-start": "just-wait --pattern \"dist/*.js\" && npm run start",
+    "watch-server-start": "just-wait --pattern \"dist/*.js\" && npm run start-forever",
     "watch-client": "webpack-dev-server --config configs/webpack.client-watch.js",
     "dev": "npm run clean && concurrently --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\"",
     "test": "NODE_PATH=./src mocha --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive",

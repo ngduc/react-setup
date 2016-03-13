@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -80,26 +80,19 @@
     "react-transmit": "https://github.com/ngduc/react-transmit.git",
     "serialize-javascript": "^1.2.0",
     "forever": "0.15.1",
-    "concurrently": "2.0.0"
-  },
-  "devDependencies": {
+    "concurrently": "2.0.0",
     "autoprefixer": "6.3.3",
     "bootstrap": "^3.3.6",
-    "chai": "^3.5.0",
     "classnames": "^2.2.3",
     "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.23.1",
-    "eslint": "2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "glob": "^7.0.3",
     "html-webpack-plugin": "^2.10.0",
     "intl-messageformat-parser": "^1.2.0",
-    "isparta": "^4.0.0",
-    "jsdom": "^8.1.0",
     "json-loader": "0.5.4",
     "just-wait": "1.0.5",
     "mkdirp": "^0.5.1",
-    "mocha": "^2.4.5",
     "postcss-cssnext": "^2.4.0",
     "postcss-import": "8.0.2",
     "postcss-loader": "^0.8.2",
@@ -109,13 +102,20 @@
     "postcss-simple-vars": "1.2.0",
     "react-addons-css-transition-group": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
+    "style-loader": "^0.13.0",
+    "webpack": "1.12.14",
+    "webpack-node-externals": "1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "2.2.0",
+    "isparta": "^4.0.0",
+    "jsdom": "^8.1.0",
+    "mocha": "^2.4.5",
+    "chai": "^3.5.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
-    "style-loader": "^0.13.0",
     "teaspoon": "^6.2.0",
-    "webpack": "1.12.14",
-    "webpack-dev-server": "1.14.1",
-    "webpack-node-externals": "1.0.0"
+    "webpack-dev-server": "1.14.1"
   },
   "engines": {
     "node": ">=4.2.4"

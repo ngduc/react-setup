@@ -35,7 +35,7 @@ export default function renderAppRouter () {
         return next()
       }
       else {
-        const webserver = (process.env.NODE_ENV === 'production' ? '' : '//' + hostname + ':8080')
+        const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':8080')
 
         Transmit.renderToString(RouterContext, renderProps).then(({ reactString, reactData }) => {
           const renderedHtml = mustache.render(indexFileContent, {

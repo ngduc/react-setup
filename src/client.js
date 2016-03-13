@@ -15,7 +15,7 @@ Transmit.render(ReactRouter.Router, { routes: routesContainer, history: ReactRou
 /**
  * Detect whether the server-side render has been discarded due to an invalid checksum.
  */
-if (process.env.NODE_ENV !== 'production') {
+if (!__PRODUCTION__) {
   if (!reactRoot.firstChild || !reactRoot.firstChild.attributes ||
       !reactRoot.firstChild.attributes['data-react-checksum']) {
     console.error('Server-side React render was discarded. Make sure that your initial render does not contain any client-side code.')

@@ -23,7 +23,9 @@ export default function renderAppRouter () {
     if (IGNORED_FILES.indexOf(location) >= 0) {
       return next()
     }
-    const locale = ctx.query.locale || 'en-US'
+
+    const locale = ctx.query.locale || ctx.session.locale || 'en-US'
+    ctx.session.locale = locale
     i18nData = i18n.getLocaleMessages(locale)
     const i18nDataString = JSON.stringify(i18nData)
 
@@ -39,7 +41,7 @@ export default function renderAppRouter () {
       }
       else {
         const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':8080')
-        var RouterContextDataWrapper = createRouterContextDataWrapper({ i18nData })
+        const RouterContextDataWrapper = createRouterContextDataWrapper({ i18nData })
 
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
           const renderedHtml = mustache.render(indexFileContent, {

@@ -2,17 +2,17 @@ import React from 'react'
 import { RouterContext } from 'react-router'
 
 
-export function createRouterContextDataWrapper(dataObj) {
+export function createRouterContextDataWrapper (dataObj) {
   return React.createClass({
     childContextTypes: {
       data: React.PropTypes.object.isRequired
     },
-    getChildContext: function() {
+    getChildContext: () => {
       return {
         data: dataObj
       }
     },
-    render: function() {
+    render: () => {
       return <RouterContext { ...this.props } />
     }
   })

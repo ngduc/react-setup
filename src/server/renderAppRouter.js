@@ -11,8 +11,10 @@ const IGNORED_FILES = ['/favicon.ico']
 const INDEX_TEMPLATE_FILE = 'dist/views/index.tpl.html'
 
 const indexFileContent = fs.readFileSync(INDEX_TEMPLATE_FILE).toString()
+
+import { createRouterContextDataWrapper } from './libs/RouterContextDataWrapper'
 const i18n = require('./libs/i18n')
-const i18nObj = { locale: '', messages: {} }
+let i18nData = { locale: '', messages: {} }
 
 
 export default function renderAppRouter () {
@@ -21,8 +23,9 @@ export default function renderAppRouter () {
     if (IGNORED_FILES.indexOf(location) >= 0) {
       return next()
     }
-    i18nObj.locale = ctx.query.locale || 'en-US'
-    const messagesJsonString = JSON.stringify(i18n.getLocaleMessages(i18nObj.locale))
+    const locale = ctx.query.locale || 'en-US'
+    i18nData = i18n.getLocaleMessages(locale)
+    const i18nDataString = JSON.stringify(i18nData)
 
     match({ routes, location }, (error, redirectLocation, renderProps) => {
       if (redirectLocation) {
@@ -36,10 +39,11 @@ export default function renderAppRouter () {
       }
       else {
         const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':8080')
+        var RouterContextDataWrapper = createRouterContextDataWrapper({ i18nData })
 
-        Transmit.renderToString(RouterContext, renderProps).then(({ reactString, reactData }) => {
+        Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
           const renderedHtml = mustache.render(indexFileContent, {
-            i18n: messagesJsonString,
+            i18n: i18nDataString,
             reactString
           })
           const output = Transmit.injectIntoMarkup(renderedHtml, reactData, [`${webserver}/client.js`])

@@ -8,14 +8,8 @@ import jaLocaleData from 'react-intl/locale-data/ja'
 addLocaleData(enLocaleData)
 addLocaleData(jaLocaleData)
 
-let translations
 let currentLocale
 let messages
-
-if (!__CLIENT__) {
-  const i18n = require('server/libs/i18n') // eslint-disable-line global-require
-  translations = i18n.getTranslations()
-}
 
 export default class App extends React.Component {
   componentWillMount () {
@@ -23,8 +17,8 @@ export default class App extends React.Component {
       currentLocale = (__CLIENT__ ? window.App.locale : 'en-US')
       messages = window.App.messages
     } else {
-      currentLocale = this.props.location.query.locale || 'en-US'
-      messages = translations[ currentLocale ]
+      currentLocale = this.context.data.i18nData.locale || 'en-US'
+      messages = this.context.data.i18nData.messages || {}
     }
     addLocaleData({
       locale: currentLocale,
@@ -41,4 +35,8 @@ export default class App extends React.Component {
       </IntlProvider>
     )
   }
+}
+
+App.contextTypes = {
+  data: React.PropTypes.object
 }

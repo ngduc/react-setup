@@ -1,7 +1,7 @@
 import React from 'react'
 import Transmit from 'react-transmit'
 import { Link } from 'react-router'
-import { injectIntl, FormattedDate } from 'react-intl'
+import { FormattedDate } from 'react-intl'
 
 import { ButtonGroup, Button } from 'react-bootstrap'
 import { CommentBox, NavBar, Utils } from 'components'

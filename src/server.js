@@ -6,6 +6,7 @@ import Router from 'koa-router'
 import serveStatic from 'koa-serve-static'
 import koaConvert from 'koa-convert'
 import koaCompress from 'koa-compress'
+import koaSession from 'koa-session'
 import zlib from 'zlib'
 
 import routesContainer from 'containers/routes'
@@ -15,11 +16,14 @@ import renderAppRouter from './server/renderAppRouter'
 
 try {
   const app = new Koa()
+  app.keys = ['seekreet', 'r3act-s3tup-k3y']
+
   const hostname = process.env.HOSTNAME || 'localhost'
   const port = process.env.PORT || 8000
   let routes = routesContainer
 
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
+  app.use(koaConvert(koaSession(app)))
 
   app.use(apiRouter())
 

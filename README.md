@@ -17,6 +17,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Debug ES6 code with Webpack
 * Development: HMR for both client & server
 * Production ready
+* Follow [JS Standard Style](docs/js-standard.md) - Want [semicolons?](docs/js-standard.md)
 
 ## Questions & Issues
 

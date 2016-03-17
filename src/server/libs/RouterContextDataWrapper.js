@@ -1,3 +1,6 @@
+/* eslint-disable func-names */
+// TODO: fix this: using "function" will mess up webpack-dev-server - https://github.com/ngduc/react-setup/issues/14
+
 import React from 'react'
 import { RouterContext } from 'react-router'
 

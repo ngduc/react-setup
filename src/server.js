@@ -6,7 +6,7 @@ import Router from 'koa-router'
 import serveStatic from 'koa-serve-static'
 import koaConvert from 'koa-convert'
 import koaCompress from 'koa-compress'
-import koaSession from 'koa-session'
+//import koaSession from 'koa-session'
 import zlib from 'zlib'
 
 import routesContainer from 'containers/routes'
@@ -23,7 +23,7 @@ try {
   let routes = routesContainer
 
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
-  app.use(koaConvert(koaSession(app)))
+  //app.use(koaConvert(koaSession(app)))
 
   app.use(apiRouter())
 

@@ -24,8 +24,8 @@ export default function renderAppRouter () {
       return next()
     }
 
-    const locale = ctx.query.locale || 'en-US'
-    // ctx.session.locale = locale
+    const locale = ctx.query.locale || ctx.session.locale || 'en-US'
+    ctx.session.locale = locale
     i18nData = i18n.getLocaleMessages(locale)
     const i18nDataString = JSON.stringify(i18nData)
 

@@ -7,12 +7,12 @@ export function createRouterContextDataWrapper (dataObj) {
     childContextTypes: {
       data: React.PropTypes.object.isRequired
     },
-    getChildContext: () => {
+    getChildContext: function () {
       return {
         data: dataObj
       }
     },
-    render: () => {
+    render: function () {
       return <RouterContext { ...this.props } />
     }
   })

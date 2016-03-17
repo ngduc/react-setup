@@ -8,13 +8,13 @@ import jaLocaleData from 'react-intl/locale-data/ja'
 addLocaleData(enLocaleData)
 addLocaleData(jaLocaleData)
 
-let currentLocale
+let currentLocale = 'en-US'
 let messages
 
 export default class App extends React.Component {
   componentWillMount () {
     if (__CLIENT__) {
-      currentLocale = (__CLIENT__ ? window.App.locale : 'en-US')
+      currentLocale = window.App.locale
       messages = window.App.messages
     } else {
       currentLocale = this.context.data.i18nData.locale || 'en-US'

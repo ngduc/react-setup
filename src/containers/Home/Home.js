@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import { FormattedDate } from 'react-intl'
 
 import { ButtonGroup, Button } from 'react-bootstrap'
-import { CommentBox, NavBar, Utils } from 'components'
+import { CommentBox, AppNavBar, Utils } from 'components'
 import dataService from 'apis/dataService'
 
 import { Msg } from './messages'
@@ -33,7 +33,7 @@ class Home extends React.Component {
   render () {
     return (
       <section className={styles.home}>
-        <NavBar />
+        <AppNavBar />
 
         <h3><Msg s="title"/></h3>
         <p><Msg s="welcome" values={{ page: 'Home Page' }}/></p>

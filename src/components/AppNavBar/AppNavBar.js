@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import { Msg } from './messages'
 import styles from './styles.css'
 
-export default class NavBar extends React.Component {
+export default class AppNavBar extends React.Component {
   render () {
     return (
       <nav className={styles.nav}>

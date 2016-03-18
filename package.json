@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -42,7 +42,7 @@
     "dev": "npm run clean && concurrently --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\"",
     "test": "NODE_PATH=./src mocha --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive",
     "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover --verbose --report text --report html _mocha -- --require ./tools/test/test-init ./src/**/*.spec.js",
-    "lint": "eslint ./src/**",
+    "lint": "eslint ./src/**/*.js",
     "clean": "rm -rf ./dist && rm -rf ./static"
   },
   "dependencies": {

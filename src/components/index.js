@@ -1,5 +1,5 @@
 import CommentBox from './CommentBox/CommentBox'
-import NavBar from './NavBar/NavBar'
+import AppNavBar from './AppNavBar/AppNavBar'
 import Utils from './Utils/Utils'
 
 /**
@@ -9,6 +9,6 @@ import Utils from './Utils/Utils'
  */
 module.exports = {
   CommentBox,
-  NavBar,
+  AppNavBar,
   Utils
 }

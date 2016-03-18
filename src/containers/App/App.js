@@ -1,7 +1,7 @@
 import React from 'react'
 import { addLocaleData, IntlProvider } from 'react-intl'
 
-import '../baseStyles.css'
+import 'baseStyles.css'
 
 import enLocaleData from 'react-intl/locale-data/en'
 import jaLocaleData from 'react-intl/locale-data/ja'

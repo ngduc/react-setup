@@ -1,6 +1,7 @@
 import React from 'react'
 import { addLocaleData, IntlProvider } from 'react-intl'
 
+import { AppNavBar } from 'components'
 import 'baseStyles.css'
 
 import enLocaleData from 'react-intl/locale-data/en'
@@ -12,6 +13,10 @@ let currentLocale = 'en-US'
 let messages
 
 export default class App extends React.Component {
+  static contextTypes = {
+    data: React.PropTypes.object
+  }
+
   componentWillMount () {
     if (__CLIENT__) {
       currentLocale = window.App.locale
@@ -30,6 +35,8 @@ export default class App extends React.Component {
     return (
       <IntlProvider locale={currentLocale} defaultLocale="en-US" messages={messages}>
         <div>
+          <AppNavBar routerProps={this.props} />
+
           {this.props.children}
         </div>
       </IntlProvider>
@@ -37,6 +44,3 @@ export default class App extends React.Component {
   }
 }
 
-App.contextTypes = {
-  data: React.PropTypes.object
-}

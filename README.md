@@ -12,12 +12,13 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Babel ES6, ES2015
 * Server rendering with React Transmit
 * Inline CSS or PostCSS: your choice :)
-* Code coverage with [isparta](https://github.com/douglasduteil/isparta)
+* Code coverage with [Isparta](https://github.com/douglasduteil/isparta)
 * ESLint ES6 configuration
 * Debug ES6 code with Webpack
+* Docker - build & launch your project - [Instructions](docs/docker.md)
 * Development: HMR for both client & server
 * Production ready
-* Follow [JS Standard Style](docs/js-standard.md) - Want [semicolons?](docs/js-standard.md)
+* Style guide: [JS Standard Style](docs/js-standard.md) - Want [semicolons?](docs/js-standard.md)
 
 ## Questions & Issues
 

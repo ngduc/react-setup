@@ -11,6 +11,7 @@ export default class AppNavBar extends React.Component {
 
   render () {
     // this.props.routerProps
+    // this.context.router.push({ pathname: '/about', query: {}, state: null })
     return (
       <nav className={styles.nav}>
         <Link to="/home" activeClassName={styles.navActive}><Msg s="navHome"/></Link>

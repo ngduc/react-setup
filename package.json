@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -120,6 +120,6 @@
     "webpack-dev-server": "1.14.1"
   },
   "engines": {
-    "node": ">=4.2.4"
+    "node": ">=4.4.0"
   }
 }

@@ -1,20 +1,20 @@
-var webpack       = require('webpack');
-var nodeExternals = require('webpack-node-externals');
-var path          = require('path');
-var fs            = require('fs');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack')
+var nodeExternals = require('webpack-node-externals')
+var path = require('path')
+var fs = require('fs')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-	target:  'node',
-	cache:   false,
+	target: 'node',
+	cache: false,
 	context: __dirname,
-	debug:   false,
+	debug: false,
 	devtool: 'source-map',
-	entry:   ['../src/server'],
-	output:  {
-		path:          path.join(__dirname, '../dist'),
-		filename:      'server.js'
+	entry: ['../src/server'],
+	output: {
+		path: path.join(__dirname, '../dist'),
+		filename: 'server.js'
 	},
 	plugins: [
     new CopyWebpackPlugin([{
@@ -54,8 +54,8 @@ module.exports = {
 		],
 		extensions: ['', '.json', '.js']
 	},
-	node:    {
+	node: {
 		__dirname: true,
-		fs:        'empty'
+		fs: 'empty'
 	}
-};
+}

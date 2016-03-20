@@ -1,16 +1,16 @@
-var webpack = require('webpack');
-var path = require('path');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack')
+var path = require('path')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-	target:  'web',
-	cache:   false,
+	target: 'web',
+	cache: false,
 	context: __dirname,
-	debug:   false,
+	debug: false,
 	devtool: false,
-	entry:   ['../src/client'],
-	output:  {
+	entry: ['../src/client'],
+	output: {
 		path: path.join(__dirname, '../static'),
 		filename: 'client.js',
 		chunkFilename: '[name].[id].js'
@@ -60,4 +60,4 @@ module.exports = {
 		__dirname: true,
 		fs:        'empty'
 	}
-};
+}

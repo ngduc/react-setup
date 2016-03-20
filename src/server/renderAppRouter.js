@@ -2,7 +2,7 @@ import fs from 'fs'
 import mustache from 'mustache'
 import React from 'react'
 import { RouterContext, match } from 'react-router'
-import Transmit from 'react-transmit'
+import Transmit from 'react-setup-transmit'
 
 import routes from '../containers/routes'
 

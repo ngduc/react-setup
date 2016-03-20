@@ -1,5 +1,5 @@
 import React from 'react'
-import Transmit from 'react-transmit'
+import Transmit from 'react-setup-transmit'
 import { Link } from 'react-router'
 import { FormattedDate } from 'react-intl'
 

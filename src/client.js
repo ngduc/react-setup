@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import * as ReactRouter from 'react-router'
-import Transmit from 'react-transmit'
+import Transmit from 'react-setup-transmit'
 
 import routesContainer from 'containers/routes'
 

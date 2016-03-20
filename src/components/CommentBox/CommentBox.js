@@ -1,6 +1,6 @@
 import React from 'react'
 import InlineCss from 'react-inline-css'
-import Transmit from 'react-transmit'
+import Transmit from 'react-setup-transmit'
 
 import dataService from 'apis/dataService'
 

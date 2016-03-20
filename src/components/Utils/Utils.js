@@ -1,4 +1,4 @@
-import Transmit from 'react-transmit'
+import Transmit from 'react-setup-transmit'
 
 export default class Utils {
   /**

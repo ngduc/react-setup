@@ -1,4 +1,4 @@
-# react-setup
+# React-Setup
 **A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack HMR, InlineCSS/PostCSS, ESLint.**
 
 I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)

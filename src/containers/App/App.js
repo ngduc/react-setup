@@ -22,8 +22,10 @@ export default class App extends React.Component {
       currentLocale = window.App.locale
       messages = window.App.messages
     } else {
-      currentLocale = this.context.data.i18nData.locale || 'en-US'
-      messages = this.context.data.i18nData.messages || {}
+      if (this.context.data && this.context.data.i18nData) {
+        currentLocale = this.context.data.i18nData.locale || 'en-US'
+        messages = this.context.data.i18nData.messages || {}
+      }
     }
     addLocaleData({
       locale: currentLocale,

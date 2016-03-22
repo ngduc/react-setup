@@ -21,8 +21,8 @@ module.exports = {
       from: '../src/server/views',
       to: './views'   // copy to dist/views
     }]),
-      new webpack.DefinePlugin({ __CLIENT__: false, __SERVER__: true, __PRODUCTION__: true, __DEV__: false }),
-      new ExtractTextPlugin('../static/[name].css')
+    new webpack.DefinePlugin({ __CLIENT__: false, __SERVER__: true, __PRODUCTION__: true, __DEV__: false }),
+    new ExtractTextPlugin('../static/[name].css')
 	],
 	module:  {
     loaders: [{

@@ -5,8 +5,11 @@ ADD ./package.json /tmp
 RUN cd /tmp \
   && npm set progress=false \
   && npm install --ignore-scripts --unsafe-perm
-RUN ln -s /tmp/node_modules node_modules
 
+RUN mkdir -p /src \
+  && ln -s /tmp/node_modules /src/node_modules
+
+COPY . /src
 WORKDIR /src
 
-CMD ["npm", "start"]
+CMD npm run build && npm start

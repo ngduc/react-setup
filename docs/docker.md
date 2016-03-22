@@ -2,10 +2,11 @@
 
 React-Setup uses Docker to build and test the deployment.
 
-Inside /tools/docker directory, there are some Docker config files:
+Following are Docker config files:
 
-* Dockerfile.dev
-* Dockerfile.test - build project & run unit tests
+* /Dockerfile - the main config file to deploy & run the app in Production mode 
+* /tools/docker/Dockerfile.dev - build project & run unit tests in watch mode on your local /src
+* /tools/docker/Dockerfile.test - build project & run unit tests on your local /src
 
 ## Docker build
 

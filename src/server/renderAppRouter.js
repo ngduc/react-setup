@@ -20,7 +20,7 @@ let i18nData = { locale: '', messages: {} }
 export default function renderAppRouter () {
   return (ctx, next) => new Promise((resolve, reject) => {
     const location = ctx.request.url
-    console.log('- location: ' + location);
+    console.log('- location: ' + location)
 
     if (IGNORED_FILES.indexOf(location) >= 0) {
       return next()
@@ -44,10 +44,10 @@ export default function renderAppRouter () {
       else {
         const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':8080')
         const RouterContextDataWrapper = createRouterContextDataWrapper({ i18nData })
-        console.log('- webserver: ' + webserver);
+        console.log('- webserver: ' + webserver)
 
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
-          console.log('- Transmit.renderToString');
+          console.log('- Transmit.renderToString')
           const renderedHtml = mustache.render(indexFileContent, {
             i18n: i18nDataString,
             reactString

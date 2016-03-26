@@ -1,5 +1,3 @@
-import fs from 'fs'
-import mustache from 'mustache'
 import React from 'react'
 import { RouterContext, match } from 'react-router'
 import Transmit from 'react-setup-transmit'
@@ -8,12 +6,10 @@ import routes from '../containers/routes'
 
 const hostname = process.env.HOSTNAME || 'localhost'
 const IGNORED_FILES = ['/favicon.ico']
-const INDEX_TEMPLATE_FILE = 'dist/views/index.tpl.html'
 
-const indexFileContent = fs.readFileSync(INDEX_TEMPLATE_FILE).toString()
-
+import { renderIndexPage, getTrackingHtml } from './libs/index-page'
 import { createRouterContextDataWrapper } from './libs/RouterContextDataWrapper'
-const i18n = require('./libs/i18n')
+import { getLocaleMessages } from './libs/i18n'
 let i18nData = { locale: '', messages: {} }
 
 
@@ -28,7 +24,7 @@ export default function renderAppRouter () {
 
     const locale = ctx.query.locale || ctx.session.locale || 'en-US'
     ctx.session.locale = locale
-    i18nData = i18n.getLocaleMessages(locale)
+    i18nData = getLocaleMessages(locale)
     const i18nDataString = JSON.stringify(i18nData)
 
     match({ routes, location }, (error, redirectLocation, renderProps) => {
@@ -47,10 +43,10 @@ export default function renderAppRouter () {
         console.log('- webserver: ' + webserver)
 
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
-          console.log('- Transmit.renderToString')
-          const renderedHtml = mustache.render(indexFileContent, {
-            i18n: i18nDataString,
-            reactString
+          const renderedHtml = renderIndexPage({
+            i18nDataString,
+            reactString,
+            trackingCode: getTrackingHtml()
           })
           const output = Transmit.injectIntoMarkup(renderedHtml, reactData, [`${webserver}/client.js`])
           ctx.body = output

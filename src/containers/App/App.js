@@ -37,7 +37,7 @@ export default class App extends React.Component {
     return (
       <IntlProvider locale={currentLocale} defaultLocale="en-US" messages={messages}>
         <div>
-          <AppNavBar routerProps={this.props} />
+          <AppNavBar routerProps={this.props}/>
 
           {this.props.children}
         </div>

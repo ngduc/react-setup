@@ -1,5 +1,4 @@
 import React from 'react'
-import InlineCss from 'react-inline-css'
 import { Router, Route } from 'react-router'
 
 import App from './App/App'
@@ -12,10 +11,10 @@ import CommentBox from '../components/CommentBox/CommentBox'
  */
 module.exports = (
   <Router>
-    <Route component={ App }>
-      <Route path='/' component={ Home } />
-      <Route path='/home' component={ Home } />
-      <Route path='/about' foo="bar" component={ About } />
+    <Route component={App}>
+      <Route path='/' component={Home}/>
+      <Route path='/home' component={Home}/>
+      <Route path='/about' foo="bar" component={About}/>
     </Route>
   </Router>
 )

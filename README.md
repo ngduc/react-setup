@@ -12,7 +12,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 ## More Features
 * I18n with [React-intl](https://github.com/yahoo/react-intl)
 * Babel ES2015
-* Server rendering with React Transmit
+* Server rendering with [React Transmit](https://github.com/RickWong/react-transmit)
 * Inline CSS or PostCSS: your choice :)
 * Code coverage with [Isparta](https://github.com/douglasduteil/isparta)
 * Debug ES6 code with Webpack

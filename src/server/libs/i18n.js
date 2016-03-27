@@ -15,10 +15,6 @@ const translations = globSync('static/translations/*.json')
     return collection
   }, {})
 
-export function getTranslations () {
-  return translations
-}
-
 export function getLocaleMessages (locale) {
   const messages = translations[locale]
   return { locale, messages }

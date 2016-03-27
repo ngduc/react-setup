@@ -1,6 +1,5 @@
-import Koa from 'koa'
 import Router from 'koa-router'
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch' // eslint-disable-line no-unused-vars
 
 let serverCount = 0
 

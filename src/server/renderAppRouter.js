@@ -1,5 +1,4 @@
-import React from 'react'
-import { RouterContext, match } from 'react-router'
+import { match } from 'react-router'
 import Transmit from 'react-setup-transmit'
 
 import routes from '../containers/routes'
@@ -14,7 +13,6 @@ const IGNORED_FILES = ['/favicon.ico']
 export default function renderAppRouter () {
   return (ctx, next) => new Promise((resolve, reject) => {
     const location = ctx.request.url
-    console.log('- location: ' + location)
 
     if (IGNORED_FILES.indexOf(location) >= 0) {
       return next()
@@ -28,14 +26,12 @@ export default function renderAppRouter () {
         resolve()
         return next()
       }
-      else if (error || !renderProps) {
+      if (error || !renderProps) {
         resolve()
         return next()
-      }
-      else {
+      } else {
         const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':8080')
         const RouterContextDataWrapper = createRouterContextDataWrapper({ i18nData: getLocaleMessages(locale) })
-        console.log('- webserver: ' + webserver)
 
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
           const renderedHtml = renderIndexPage(locale, reactString)

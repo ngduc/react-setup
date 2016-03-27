@@ -1,11 +1,9 @@
-import fetch from 'isomorphic-fetch'
 import fetchPlus from 'fetch-plus'
 import plusJson from 'fetch-plus-json'
-import plusBearerauth from 'fetch-plus-bearerauth'
 
 const serviceUrl = () => {
   if (__SERVER__) {
-    //return 'http://jsonplaceholder.typicode.com'
+    // return 'http://jsonplaceholder.typicode.com'
     const hostname = process.env.HOSTNAME || 'localhost'
     const port = process.env.PORT || 8000
     return `http://${hostname}:${port}/api-proxy`

@@ -33,8 +33,6 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 **Install**
 ```
 npm install -g babel-cli
-npm install -g eslint
-npm install -g eslint-plugin-react
 npm install
 ```
 

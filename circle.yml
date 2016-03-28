@@ -3,8 +3,7 @@ machine:
     version: 4.2.1
 dependencies:
   override:
-    - npm install babel-cli -g
-    - npm install eslint -g
+    - npm install -g babel-cli
     - npm install
 test:
   override:

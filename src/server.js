@@ -14,12 +14,15 @@ import routesContainer from 'containers/routes'
 import apiRouter from './server/apiRouter'
 import renderAppRouter from './server/renderAppRouter'
 
+const log = require('bunyan').createLogger({ name: 'app' });
+const hostname = process.env.HOSTNAME || 'localhost'
+const port = process.env.PORT || 8000
+
+
 try {
   const app = new Koa()
   app.keys = ['seekreet', 'r3act-s3tup-k3y']
 
-  const hostname = process.env.HOSTNAME || 'localhost'
-  const port = process.env.PORT || 8000
   let routes = routesContainer
 
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
@@ -34,18 +37,17 @@ try {
   app.use(serveStatic('static', {}))
 
   app.listen(port, () => {
-    console.info('==> ✅  Server is listening')
-    console.info('==> 🌎  Go to http://%s:%s', hostname, port)
+    log.info('==> ✅  Server is listening ===')
+    log.info('==> 🌎  Go to http://%s:%s ===', hostname, port)
   })
 
   if (__DEV__) {
     if (module.hot) {
-      console.log('[HMR] Waiting for server-side updates')
+      log.info('[HMR] Waiting for server-side updates')
 
       module.hot.accept('containers/routes', () => {
         routes = require('containers/routes') // eslint-disable-line global-require
       })
-
       module.hot.addStatusHandler((status) => {
         if (status === 'abort') {
           setTimeout(() => process.exit(0), 0)
@@ -55,5 +57,5 @@ try {
   }
 }
 catch (error) {
-  console.error(error.stack || error)
+  log.error(error.stack || error)
 }

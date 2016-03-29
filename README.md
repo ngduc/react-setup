@@ -10,7 +10,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 <img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="400" height="308" >
 
 ## More Features
-* I18n with [React-intl](https://github.com/yahoo/react-intl)
+* I18n with [React-Intl](https://github.com/yahoo/react-intl)
 * Babel ES2015
 * Server rendering with [React Transmit](https://github.com/RickWong/react-transmit)
 * Inline CSS or PostCSS: your choice :)
@@ -22,6 +22,12 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Development: HMR (Hot Module Replacement) for both client & server
 * Production ready
 * Miscellaneous features: bunyan, mustache, GA tracking code, etc.
+
+## Documentation
+
+[Style Guide - JS Standard](docs/js-standard.md)
+[Internationalization (i18n)](docs/i18n.md)
+[Docker files](docs/docker.md)
 
 ## Questions & Issues
 

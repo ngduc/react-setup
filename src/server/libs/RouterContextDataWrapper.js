@@ -4,7 +4,11 @@
 import React from 'react'
 import { RouterContext } from 'react-router'
 
-
+/**
+ * Wrap RouterContext component with context data.
+ * @param {Object} dataObj - Data object.
+ * @returns {Class} - Wrapped RouterContext.
+ */
 export function createRouterContextDataWrapper (dataObj) {
   return React.createClass({
     childContextTypes: {

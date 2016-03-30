@@ -18,6 +18,7 @@ const fragmentArr = [
   { commentBoxData: [CommentBox.fetchInitialData, 3] }
 ]
 
+
 class Home extends React.Component {
   state = { data: {}, commentBoxData: {} }
 

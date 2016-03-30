@@ -17,7 +17,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Code coverage with [Isparta](https://github.com/douglasduteil/isparta)
 * Debug ES6 code with Webpack
 * ESLint ES6 configuration
-* Style guide: [JS Standard Style](docs/js-standard.md) - Want [semicolons?](docs/js-standard.md)
+* Style guide: [JS Standard Style](docs/style-guide.md) - Want [semicolons?](docs/style-guide.md)
 * Docker - build & launch your project - [Instructions](docs/docker.md)
 * Development: HMR (Hot Module Replacement) for both client & server
 * Production ready
@@ -25,7 +25,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 ## Documentation
 
-* [Style Guide - JS Standard](docs/js-standard.md)
+* [Style Guide](docs/style-guide.md) - JS Standard, JSDocs
 * [Internationalization (i18n)](docs/i18n.md)
 * [Docker files](docs/docker.md)
 

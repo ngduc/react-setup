@@ -9,8 +9,13 @@ const TRACKING_CODE_FILE = 'dist/views/tracking-code.tpl.html'
 const indexFileContent = fs.readFileSync(INDEX_TEMPLATE_FILE).toString()
 const trackingCodeFileContent = fs.readFileSync(TRACKING_CODE_FILE).toString()
 
-
-export function renderIndexPage (locale, reactString) {
+/**
+ * Render index page content with locale and reactString.
+ * @param {string} locale - Locale.
+ * @param {string} reactString - Output from server rendering.
+ * @returns {string} - Index page content.
+ */
+const renderIndexPage = (locale, reactString) => {
   const i18nData = getLocaleMessages(locale)
   const i18nDataString = JSON.stringify(i18nData)
 
@@ -21,3 +26,5 @@ export function renderIndexPage (locale, reactString) {
   }
   return mustache.render(indexFileContent, data)
 }
+
+export { renderIndexPage }

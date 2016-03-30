@@ -3,9 +3,9 @@ import Transmit from 'react-setup-transmit'
 export default class Utils {
   /**
    * Find a parent element by traversing up.
-   * @param  {object} child     - dom element
-   * @param  {string} selector  - selector to find parent. e.g. '#id123' or '.content' or 'div'
-   * @return {object}           - return parent dom element
+   * @param {Object} child - DOM element.
+   * @param {string} selector - Selector to find parent. e.g. '#id123' or '.content' or 'div'.
+   * @returns {Object} - Return parent dom element.
    */
   static findParentByChild (child, selector) {
     let el = child
@@ -30,13 +30,18 @@ export default class Utils {
   /**
    * Toggle element by setting display style to 'block' or 'none'
    * @example - toggle({ overlayEl: el, show: false })
-   * @param  {object} param - object parameter { name: domEl, show: boolean }
+   * @param {Object} param - Object parameter { name: domEl, show: boolean }
    */
   static toggle (param) {
     const el = param[ Object.keys(param)[0] ] // first param object.
     el.style.display = (param.show ? 'block' : 'none')
   }
 
+  /**
+   * Helper function to get Transmit Fragments object from the array of fragments.
+   * @param {array} fragmentArr - Array of fragments which declare functions to fetch data.
+   * @returns {object} - Transmit's fragment object.
+   */
   static getTransmitFragments (fragmentArr) {
     return fragmentArr.reduce((res, item) => {
       const key = Object.keys(item)[0]
@@ -46,6 +51,15 @@ export default class Utils {
     }, {})
   }
 
+  /**
+   * Client-side helper to invoke functions in 'fragmentArr' to fetch data to the state.
+   * @param {Array} fragmentArr - Array of fragments which declare functions to fetch data.
+   * @param {Object} ctx - Context (e.g. this).
+   * @param {callbackFn} [callbackFn] - Callback function to handle each fragment.
+   *   @callback callbackFn
+   *   @param {string} key - Fragment key.
+   *   @param {Object} data - Fragment data.
+   */
   static fetchFragmentsToState (fragmentArr, ctx, callbackFn) {
     fragmentArr.map(item => {
       const key = Object.keys(item)[0]
@@ -62,6 +76,12 @@ export default class Utils {
     })
   }
 
+  /**
+   * Helper function to wrap Component with Transmit Container to fetch fragments for server rendering.
+   * @param {Class} Component - Component to wrap.
+   * @param {Array} fragmentArr - Array of fragments which declare functions to fetch data.
+   * @returns {Object} - Transmit Container.
+   */
   static createTransmitContainer (Component, fragmentArr) {
     const fragments = this.getTransmitFragments(fragmentArr)
     return Transmit.createContainer(Component, { initialVariables: {}, fragments })

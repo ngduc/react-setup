@@ -21,7 +21,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Docker - build & launch your project - [Instructions](docs/docker.md)
 * Development: HMR (Hot Module Replacement) for both client & server
 * Production ready
-* Miscellaneous features: bunyan, mustache, GA tracking code, etc.
+* Miscellaneous features: pre-git, bunyan, mustache, GA tracking code, etc.
 
 ## Documentation
 

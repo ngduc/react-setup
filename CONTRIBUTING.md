@@ -4,10 +4,14 @@ We'd love for you to contribute to our source code and to make this even better 
 today! Here are the guidelines we'd like you to follow:
 
 ## <a name="rules"></a> Coding Rules
+
+React-Setup uses `pre-git` as a git hook to run unit tests, check for lint errors and make sure commit message follow the proper format.
+
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
 * All features or bug fixes **must be tested** by one or more specs.
 * All public API methods **must be documented** with jsdoc.
+* All files must be linted.
 
 ## <a name="commit"></a> Git Commit Guidelines
 
@@ -33,8 +37,8 @@ If the commit reverts a previous commit, it should begin with `revert: `, follow
 ### Type
 Must be one of the following:
 
-* **feat**: A new feature
-* **fix**: A bug fix
+* **feat**: A new feature - should have a ticket number
+* **fix**: A bug fix - should have a ticket number
 * **docs**: Documentation only changes
 * **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing
   semi-colons, etc)

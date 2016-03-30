@@ -18,7 +18,11 @@ const fragmentArr = [
   { commentBoxData: [CommentBox.fetchInitialData, 3] }
 ]
 
-
+/**
+ * Homepage component
+ * Usage: <Home data={}/>
+ * @param {Object} data - Fragment data from server rendering for this component.
+ */
 class Home extends React.Component {
   state = { data: {}, commentBoxData: {} }
 

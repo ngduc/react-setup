@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -43,7 +43,8 @@
     "test": "NODE_PATH=./src mocha --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive",
     "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover --verbose --report text --report html _mocha -- --require ./tools/test/test-init ./src/**/*.spec.js",
     "lint": "eslint ./src/**/*.js",
-    "clean": "rm -rf ./dist && rm -rf ./static"
+    "clean": "rm -rf ./dist && rm -rf ./static",
+    "commit": "commit-wizard"
   },
   "dependencies": {
     "autoprefixer": "^6.3.5",
@@ -116,6 +117,7 @@
     "isparta": "^4.0.0",
     "jsdom": "^8.1.0",
     "mocha": "^2.4.5",
+    "pre-git": "^3.7.1",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "teaspoon": "^6.2.0",
@@ -123,5 +125,14 @@
   },
   "engines": {
     "node": ">=4.4.0"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "conventional",
+      "pre-commit": ["npm test", "npm run lint"],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
   }
 }

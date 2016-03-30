@@ -1,6 +1,8 @@
 # Style Guide
 
-Naming conventions should be strictly followed to ensure consistency.
+* Naming conventions should be strictly followed to ensure consistency.
+* Consistent code, even when written by a team, should look like one person wrote it.
+* It helps reduce the lead time required to understand an implementation.
 
 ## JS Standard
 

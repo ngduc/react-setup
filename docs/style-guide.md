@@ -19,8 +19,7 @@ $ eslint --fix src/**
 
 ## JSDocs
 
-React-Setup uses [JSDocs](http://usejsdoc.org/) to document functions.
-Naming conventions should be strictly followed to ensure consistency.
+React-Setup uses [JSDocs](http://usejsdoc.org/) to document functions. Naming conventions should be strictly followed to ensure consistency.
 
 References:
 * http://usejsdoc.org

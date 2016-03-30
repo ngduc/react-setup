@@ -7,7 +7,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 [![Circle CI](https://circleci.com/gh/ngduc/react-setup.svg?style=svg)](https://circleci.com/gh/ngduc/react-setup) [![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
 
-<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="400" height="308" >
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="480" height="282" >
 
 ## More Features
 * I18n with [React-Intl](https://github.com/yahoo/react-intl)

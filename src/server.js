@@ -9,12 +9,10 @@ import koaCompress from 'koa-compress'
 import koaSession from 'koa-session'
 import zlib from 'zlib'
 
-import routesContainer from 'containers/routes'
-
 import apiRouter from './server/apiRouter'
 import renderAppRouter from './server/renderAppRouter'
 
-const log = require('bunyan').createLogger({ name: 'app' });
+const log = require('bunyan').createLogger({ name: 'app' })
 const hostname = process.env.HOSTNAME || 'localhost'
 const port = process.env.PORT || 8000
 
@@ -22,8 +20,6 @@ const port = process.env.PORT || 8000
 try {
   const app = new Koa()
   app.keys = ['seekreet', 'r3act-s3tup-k3y']
-
-  let routes = routesContainer
 
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
   app.use(koaConvert(koaSession(app)))
@@ -46,7 +42,7 @@ try {
       log.info('[HMR] Waiting for server-side updates')
 
       module.hot.accept('containers/routes', () => {
-        routes = require('containers/routes') // eslint-disable-line global-require
+        require('containers/routes') // eslint-disable-line global-require
       })
       module.hot.addStatusHandler((status) => {
         if (status === 'abort') {
@@ -55,7 +51,6 @@ try {
       })
     }
   }
-}
-catch (error) {
+} catch (error) {
   log.error(error.stack || error)
 }

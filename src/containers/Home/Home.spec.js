@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { createRenderer } from 'react-addons-test-utils'
 import $ from 'teaspoon'
 import { IntlProvider } from 'react-intl'

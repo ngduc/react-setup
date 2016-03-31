@@ -28,9 +28,9 @@ export default class Utils {
   }
 
   /**
-   * Toggle element by setting display style to 'block' or 'none'
-   * @example - toggle({ overlayEl: el, show: false })
-   * @param {Object} param - Object parameter { name: domEl, show: boolean }
+   * Toggle element by setting display style to 'block' or 'none'.
+   * @example - toggle({ overlayEl: el, show: false }).
+   * @param {Object} param - Object parameter { name: domEl, show: boolean }.
    */
   static toggle (param) {
     const el = param[ Object.keys(param)[0] ] // first param object.
@@ -39,8 +39,8 @@ export default class Utils {
 
   /**
    * Helper function to get Transmit Fragments object from the array of fragments.
-   * @param {array} fragmentArr - Array of fragments which declare functions to fetch data.
-   * @returns {object} - Transmit's fragment object.
+   * @param {Array} fragmentArr - Array of fragments which declare functions to fetch data.
+   * @returns {Object} - Transmit's fragment object.
    */
   static getTransmitFragments (fragmentArr) {
     return fragmentArr.reduce((res, item) => {
@@ -57,8 +57,8 @@ export default class Utils {
    * @param {Object} ctx - Context (e.g. this).
    * @param {callbackFn} [callbackFn] - Callback function to handle each fragment.
    *   @callback callbackFn
-   *   @param {string} key - Fragment key.
-   *   @param {Object} data - Fragment data.
+   *   @param {string} callbackFn.<key> - Fragment key.
+   *   @param {Object} callbackFn.<data> - Fragment data.
    */
   static fetchFragmentsToState (fragmentArr, ctx, callbackFn) {
     fragmentArr.map(item => {

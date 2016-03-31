@@ -1,5 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
 import * as ReactRouter from 'react-router'
 import Transmit from 'react-setup-transmit'
 

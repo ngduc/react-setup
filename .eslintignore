@@ -1,0 +1,9 @@
+# node_modules ignored by default
+
+# Ignore files create by Istanbul
+configs/
+dist/
+docs/
+static/
+tools/
+coverage/

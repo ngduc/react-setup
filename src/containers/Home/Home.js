@@ -1,6 +1,4 @@
 import React from 'react'
-import Transmit from 'react-setup-transmit'
-import { Link } from 'react-router'
 import { FormattedDate } from 'react-intl'
 
 import { ButtonGroup, Button } from 'react-bootstrap'

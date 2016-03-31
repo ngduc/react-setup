@@ -1,6 +1,5 @@
 import React from 'react'
 import InlineCss from 'react-inline-css'
-import Transmit from 'react-setup-transmit'
 
 import dataService from 'apis/dataService'
 
@@ -24,7 +23,7 @@ class CommentBox extends React.Component {
     const { data } = this.props
 
     return (
-      <InlineCss stylesheet={CommentBox.css()} namespace='CommentBox'>
+      <InlineCss stylesheet={CommentBox.css()} namespace="CommentBox">
         <p>
           Comment Box - Post 1:
         </p>
@@ -36,7 +35,7 @@ class CommentBox extends React.Component {
   }
 
   /**
-   * <InlineCss> component allows you to write a CSS stylesheet for your component. Target
+   * This component <InlineCss> allows you to write a CSS stylesheet for your component. Target
    * your component with `&` and its children with `& selectors`. Be specific.
    */
   static css () {

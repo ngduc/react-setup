@@ -19,7 +19,7 @@ const translations = globSync('static/translations/*.json')
  * @param {string} locale - Locale.
  * @returns {{ locale: string, messages: Object }} - Object of locale and messages.
  */
-const getLocaleMessages = (locale) => {
+function getLocaleMessages (locale) {
   const messages = translations[locale]
   return { locale, messages }
 }

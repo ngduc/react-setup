@@ -1,6 +1,6 @@
 # Style Guide
 
-* Naming conventions should be strictly followed to ensure consistency.
+* Naming conventions should be closely followed to ensure consistency.
 * Consistent code, even when written by a team, should look like one person wrote it.
 * It helps reduce the lead time required to understand an implementation.
 
@@ -8,7 +8,7 @@
 
 React-Setup uses [JS Standard Style](https://github.com/feross/standard)
 
-We don't need semicolons since JS has ASI to take care of that.
+We don't need semicolons since JS has ASI to take care of that. 
 
 But if you really want semicolons, change ".eslintrc" to use: `"semi": [2, "always"]` then you can run this command to insert them automatically:
 ```
@@ -62,8 +62,8 @@ function addItem({ itemArray, item, flag = true }) {
  * @param {Object} ctx - Context (e.g. this).
  * @param {callbackFn} [callbackFn] - Callback function to handle each fragment.
  *   @callback callbackFn
- *   @param {string} key - Fragment key.
- *   @param {Object} data - Fragment data.
+ *   @param {string} callbackFn.key - Fragment key.
+ *   @param {Object} callbackFn.data - Fragment data.
  */
 static fetchFragmentsToState (fragmentArr, ctx, callbackFn) {
   // ...

@@ -15,7 +15,7 @@ const trackingCodeFileContent = fs.readFileSync(TRACKING_CODE_FILE).toString()
  * @param {string} reactString - Output from server rendering.
  * @returns {string} - Index page content.
  */
-const renderIndexPage = (locale, reactString) => {
+function renderIndexPage (locale, reactString) {
   const i18nData = getLocaleMessages(locale)
   const i18nDataString = JSON.stringify(i18nData)
 

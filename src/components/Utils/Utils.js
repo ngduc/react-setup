@@ -57,8 +57,8 @@ export default class Utils {
    * @param {Object} ctx - Context (e.g. this).
    * @param {callbackFn} [callbackFn] - Callback function to handle each fragment.
    *   @callback callbackFn
-   *   @param {string} callbackFn.<key> - Fragment key.
-   *   @param {Object} callbackFn.<data> - Fragment data.
+   *   @param {string} callbackFn.key - Fragment key.
+   *   @param {Object} callbackFn.data - Fragment data.
    */
   static fetchFragmentsToState (fragmentArr, ctx, callbackFn) {
     fragmentArr.map(item => {

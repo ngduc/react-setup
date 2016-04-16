@@ -42,7 +42,6 @@ module.exports = {
     noParse: /\.min\.js/
   },
   postcss: [
-    require('postcss-modules-values'),
     require('autoprefixer'),
     require('postcss-import'),
     require('postcss-nested'),

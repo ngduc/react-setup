@@ -2,7 +2,7 @@ import React from 'react'
 import { addLocaleData, IntlProvider } from 'react-intl'
 
 import { AppNavBar } from 'components'
-import 'baseStyles.css'
+import 'styles.base.css'
 
 import enLocaleData from 'react-intl/locale-data/en'
 import jaLocaleData from 'react-intl/locale-data/ja'

@@ -13,7 +13,7 @@ export default class AppNavBar extends React.Component {
     // this.props.routerProps
     // this.context.router.push({ pathname: '/about', query: {}, state: null })
     return (
-      <nav className={styles.nav}>
+      <nav className={`globalNav ${styles.nav}`}>
         <Link to="/home" activeClassName={styles.navActive}><Msg s="navHome"/></Link>
         <Link to="/about" activeClassName={styles.navActive}><Msg s="navAbout"/></Link>
       </nav>

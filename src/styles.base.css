@@ -12,3 +12,7 @@ body {
   text-decoration: none;
   color: $LINK_COLOR;
 }
+
+.globalNav {
+  font-weight: bold;
+}

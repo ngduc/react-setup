@@ -5,6 +5,11 @@ var fs = require('fs')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+var postCssImport = require('postcss-import')
+var postCssNested = require('postcss-nested')
+var postCssSimpleVars = require('postcss-simple-vars')
+var postCssAutoprefixer = require('autoprefixer')
+
 module.exports = {
 	target: 'node',
 	cache: false,
@@ -28,7 +33,11 @@ module.exports = {
     loaders: [{
       test: /\.json$/, loaders: ['json']
     }, {
+      test: /\.base\.css$/,
+      loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss')
+    }, {
       test: /\.css$/,
+      exclude: /\.base\.css$/,
       loader: ExtractTextPlugin.extract('style', 'css?modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
     }],
 		postLoaders: [
@@ -36,12 +45,12 @@ module.exports = {
 		],
 		noParse: /\.min\.js/
 	},
-  postcss: [
-    require('autoprefixer'),
-    require('postcss-import'),
-    require('postcss-nested'),
-    require('postcss-simple-vars')
-  ],
+  postcss: function () {
+    return {
+      defaults: [postCssImport, postCssNested, postCssSimpleVars, postCssAutoprefixer],
+      base: [postCssImport, postCssNested, postCssSimpleVars, postCssAutoprefixer]
+    };
+  },
 	externals: [nodeExternals({
 		whitelist: ['webpack/hot/poll?1000']
 	})],

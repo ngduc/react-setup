@@ -14,7 +14,7 @@ import renderAppRouter from './server/renderAppRouter'
 
 const log = require('bunyan').createLogger({ name: 'app' })
 const hostname = process.env.HOSTNAME || 'localhost'
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8100
 
 
 try {

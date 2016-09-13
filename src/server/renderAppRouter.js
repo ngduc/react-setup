@@ -8,7 +8,7 @@ import { createRouterContextDataWrapper } from './libs/RouterContextDataWrapper'
 
 const hostname = process.env.HOSTNAME || 'localhost'
 const IGNORED_FILES = ['/favicon.ico']
-
+const webpackPort = 8199
 
 export default function renderAppRouter () {
   return (ctx, next) => new Promise((resolve, reject) => {
@@ -30,7 +30,7 @@ export default function renderAppRouter () {
         resolve()
         return next()
       } else {
-        const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':8080')
+        const webserver = (__PRODUCTION__ ? '' : '//' + hostname + ':' + webpackPort)
         const RouterContextDataWrapper = createRouterContextDataWrapper({ i18nData: getLocaleMessages(locale) })
 
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {

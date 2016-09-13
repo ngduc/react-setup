@@ -42,7 +42,7 @@ npm install -g babel-cli
 npm install
 ```
 
-**Start the application in DEV mode with Hot-Module-Replacement**
+**Start DEV mode with Hot-Module-Replacement**
 ```
 npm run dev
 ```
@@ -53,7 +53,7 @@ npm test
 npm run test-cov
 ```
 
-**Build & Start Production**
+**Build & Start PRODUCTION**
 ```
 npm run build && npm start
 ```

@@ -11,16 +11,20 @@ module.exports = {
       loaders: ['json']
     }, {
       test: /\.base\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss')
+      loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader'})
     }, {
       test: /\.css$/,
       exclude: /\.base\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
+      loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap&&modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss-loader'})
     }],
     postLoaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loaders: ['babel?presets[]=es2015&presets[]=stage-0&presets[]=react']
+      loader: 'babel',
+      query: {
+        cacheDirectory: true,
+        presets: ['react', [ "es2015", { "modules": false } ], 'stage-0', 'react-hmre']
+      }
     }],
     noParse: /\.min\.js/
   },
@@ -31,7 +35,7 @@ module.exports = {
     }
   },
   resolve: {
-    modulesDirectories: [
+    modules: [
       'src',
       'node_modules',
       'web_modules'

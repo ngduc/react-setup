@@ -34,12 +34,12 @@ config.plugins = [
 config.module.postLoaders = [
   {
     test: /\.js$/,
+    exclude: /node_modules/,
     loader: 'babel',
     query: {
       cacheDirectory: true,
-      presets: ['react', 'es2015', 'stage-0', 'react-hmre']
-    },
-    exclude: /node_modules/
+      presets: ['react', [ "es2015", { "modules": false } ], 'stage-0', 'react-hmre']
+    }
   }
 ]
 

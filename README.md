@@ -1,5 +1,5 @@
 # React-Setup
-**A Universal React Setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack HMR, InlineCSS/PostCSS, ESLint.**
+**A Universal React Setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack 2, InlineCSS/PostCSS, ESLint.**
 
 I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
@@ -15,7 +15,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Server rendering with [React Transmit](https://github.com/RickWong/react-transmit)
 * Inline CSS or PostCSS: your choice :)
 * Code coverage with [Isparta](https://github.com/douglasduteil/isparta)
-* Debug ES6 code with Webpack
+* Debug ES6 code with Webpack 2
 * ESLint ES6 configuration
 * Style guide: [JS Standard Style](docs/style-guide.md) - Want [semicolons?](docs/style-guide.md)
 * Docker - build & launch your project - [Instructions](docs/docker.md)

@@ -11,8 +11,8 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 ## More Features
 * I18n with [React-Intl](https://github.com/yahoo/react-intl)
-* Babel ES2015
-* Server rendering with [React Transmit](https://github.com/RickWong/react-transmit)
+* Babel ES2015 (ES6/ES7)
+* Server rendering with [React Transmit](https://github.com/RickWong/react-transmit) (inspired by Facebook Relay)
 * Inline CSS or PostCSS: your choice :)
 * Code coverage with [Isparta](https://github.com/douglasduteil/isparta)
 * Debug ES6 code with Webpack 2
@@ -27,6 +27,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 * [Style Guide](docs/style-guide.md) - JS Standard, JSDocs
 * [Internationalization (i18n)](docs/i18n.md)
+* [Dependencies Notes](docs/dependencies.md)
 * [Docker files](docs/docker.md)
 
 ## Questions & Issues
@@ -60,6 +61,6 @@ npm run build && npm start
 
 ## Contributing
 
-PR and issues reporting are always welcome :)
+PR, Stars ✭ and Issues Reporting are always welcome :)
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md)

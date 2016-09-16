@@ -117,7 +117,6 @@
     "isparta": "^4.0.0",
     "jsdom": "^9.5.0",
     "mocha": "^3.0.2",
-    "postcss-cssnext": "^2.8.0",
     "pre-git": "^3.10.0",
     "react-proxy": "^1.1.8",
     "sinon": "^1.17.5",

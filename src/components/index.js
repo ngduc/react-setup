@@ -1,4 +1,4 @@
-import CommentBox from './CommentBox/CommentBox'
+import BlogPost from './BlogPost/BlogPost'
 import AppNavBar from './AppNavBar/AppNavBar'
 import Utils from './Utils/Utils'
 
@@ -8,7 +8,7 @@ import Utils from './Utils/Utils'
  * @type {Object}
  */
 module.exports = {
-  CommentBox,
+  BlogPost,
   AppNavBar,
   Utils
 }

@@ -33,7 +33,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 ## Questions & Issues
 
 * File an [Issue](https://github.com/ngduc/react-setup/issues)
-* [![Join the chat at https://gitter.im/ngduc/react-setup](https://badges.gitter.im/ngduc/react-setup.svg)](https://gitter.im/ngduc/react-setup?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+* Join the [Chat room](https://gitter.im/ngduc/react-setup?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Usage
 
@@ -61,6 +61,6 @@ npm run build && npm start
 
 ## Contributing
 
-PR, Stars ✭ and Issues Reporting are always welcome :)
+PR, Stars ✭ and Issue Reporting are always welcome :)
 
 Follow [CONTRIBUTING.md](CONTRIBUTING.md)

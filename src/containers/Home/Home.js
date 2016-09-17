@@ -2,18 +2,22 @@ import React from 'react'
 import { FormattedDate } from 'react-intl'
 
 import { ButtonGroup, Button } from 'react-bootstrap'
-import { CommentBox, Utils } from 'components'
+import { BlogPost, Utils } from 'components'
 import dataService from 'apis/dataService'
 
 import { Msg } from './messages'
 import styles from './styles.css'
 
-const fetchInitialData = (id) => {
-  return dataService.read(['posts', id], {}).catch(error => { throw error })
+const fetchPost = (postId) => {
+  return dataService.read(['posts', postId], {}).catch(error => { throw error })
 }
+const fetchComments = (postId) => {
+  return dataService.list(['posts', postId, 'comments'], {}).catch(error => { throw error })
+}
+
 const fragmentArr = [
-  { data: [fetchInitialData, 3] },
-  { commentBoxData: [CommentBox.fetchInitialData, 3] }
+  { post: [ fetchPost, 1 ] },
+  { comments: [ fetchComments, 3 ] }
 ]
 
 /**
@@ -22,11 +26,14 @@ const fragmentArr = [
  * @param {Object} data - Fragment data from server rendering for this component.
  */
 class Home extends React.Component {
-  state = { data: {}, commentBoxData: {} }
+  state = {
+    post: {},
+    comments: []
+  }
 
   componentWillMount () {
     // after routing back to this component, manually fetch data:
-    if (__CLIENT__ && !this.props.data) {
+    if (__CLIENT__ && !this.props.post) {
       Utils.fetchFragmentsToState(fragmentArr, this)
     } else {
       this.setState(this.props)
@@ -49,9 +56,9 @@ class Home extends React.Component {
           <Button><Msg s="rateGreat" /></Button>
         </ButtonGroup>
         <hr />
-        <div>Post 1 - Title: "{this.state.data.title}"</div>
+        <div>Recent Blog - Title: {this.state.post.title}</div>
 
-        <CommentBox data={this.state.commentBoxData}/>
+        <BlogPost post={this.state.post} comments={this.state.comments}/>
       </section>
     )
   }

@@ -1,16 +1,7 @@
 import React from 'react'
 import InlineCss from 'react-inline-css'
 
-import dataService from 'apis/dataService'
-
-const fetchInitialData = (id) => {
-  return dataService.browse(['posts', id, 'comments'], {}).catch(error => { throw error })
-}
-
-/**
- * Main React application entry-point for both the server and client.
- */
-class CommentBox extends React.Component {
+class BlogPost extends React.Component {
   componentWillMount () {
     // run on Server & Client.
   }
@@ -20,15 +11,15 @@ class CommentBox extends React.Component {
 
   render () {
     // run on Server & Client.
-    const { data } = this.props
+    const { post, comments } = this.props
 
     return (
-      <InlineCss stylesheet={CommentBox.css()} namespace="CommentBox">
+      <InlineCss stylesheet={BlogPost.css()} namespace="BlogPost">
         <p>
-          Comment Box - Post 1:
+          Blog Post - Post {post.id}: {post.title}
         </p>
         <p>
-          Total Comments: {data.length}
+          Total Comments: {comments.length}
         </p>
       </InlineCss>
     )
@@ -49,6 +40,5 @@ class CommentBox extends React.Component {
 		`)
   }
 }
-CommentBox.fetchInitialData = fetchInitialData
 
-export default CommentBox
+export default BlogPost

@@ -12,4 +12,6 @@ RUN mkdir -p /src \
 COPY . /src
 WORKDIR /src
 
+EXPOSE 8100
+
 CMD npm run build && npm start

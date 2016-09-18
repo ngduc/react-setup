@@ -3,21 +3,14 @@ import { FormattedDate } from 'react-intl'
 
 import { ButtonGroup, Button } from 'react-bootstrap'
 import { BlogPost, Utils } from 'components'
-import dataService from 'apis/dataService'
+import API from 'api'
 
 import { Msg } from './messages'
 import styles from './styles.css'
 
-const fetchPost = (postId) => {
-  return dataService.read(['posts', postId], {}).catch(error => { throw error })
-}
-const fetchComments = (postId) => {
-  return dataService.list(['posts', postId, 'comments'], {}).catch(error => { throw error })
-}
-
 const fragmentArr = [
-  { post: [ fetchPost, 1 ] },
-  { comments: [ fetchComments, 3 ] }
+  { post: [ API.getPost, 1 ] },
+  { comments: [ API.listComments, 1 ] }
 ]
 
 /**

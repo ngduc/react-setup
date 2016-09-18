@@ -10,8 +10,9 @@ module.exports = {
       test: /\.json$/,
       loaders: ['json']
     }, {
+      // base.css has global css unaltered class names (postcss without modules option)
       test: /\.base\.css$/,
-      loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader'})
+      loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap&&importLoaders=1!postcss-loader'})
     }, {
       test: /\.css$/,
       exclude: /\.base\.css$/,

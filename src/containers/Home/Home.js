@@ -13,11 +13,6 @@ const fragmentArr = [
   { comments: [ API.listComments, 1 ] }
 ]
 
-/**
- * Homepage component
- * Usage: <Home data={}/>
- * @param {Object} data - Fragment data from server rendering for this component.
- */
 class Home extends React.Component {
   state = {
     post: {},

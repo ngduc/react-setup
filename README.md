@@ -3,8 +3,6 @@
 
 I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
-[Live Demo](http://104.236.181.236:51431)
-
 [![Circle CI](https://circleci.com/gh/ngduc/react-setup.svg?style=svg)](https://circleci.com/gh/ngduc/react-setup) [![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
 
 <img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo.gif" width="480" height="282" >

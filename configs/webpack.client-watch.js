@@ -7,8 +7,8 @@ var config = require('./webpack.client.js')
 var hostname = process.env.HOSTNAME || 'localhost'
 var webpackPort = 8199
 
-config.cache = true
-config.debug = true
+config.cache   = true
+config.debug   = true
 config.devtool = 'cheap-module-eval-source-map'
 
 config.entry.unshift(

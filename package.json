@@ -34,7 +34,7 @@
     "build-msg": "babel --plugins react-intl src/**/messages.js && babel-node tools/scripts/translate.js",
     "build-server": "webpack --colors --display-error-details --config configs/webpack.server.js",
     "build-client": "webpack --colors --display-error-details --config configs/webpack.client.js",
-    "build": "npm run clean && concurrently \"npm run build-server\" \"npm run build-client\" \"npm run build-msg\"",
+    "build": "npm run clean && npm run build-msg && npm run build-server && npm run build-client",
     "watch-server": "webpack --watch --colors --display-error-details --config configs/webpack.server-watch.js",
     "watch-server-start": "just-wait -t 60 --pattern \"dist/*.js\" && npm run start-forever",
     "watch-client": "webpack --watch --colors --display-error-details --config configs/webpack.client-watch.js",

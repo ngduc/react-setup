@@ -29,7 +29,7 @@
   ],
   "main": "dist/server.js",
   "scripts": {
-    "start": "node --harmony ./dist/server.js",
+    "start": "npm run build && node --harmony ./dist/server.js",
     "start-forever": "forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
     "build-msg": "babel --plugins react-intl src/**/messages.js && babel-node tools/scripts/translate.js",
     "build-server": "webpack --colors --display-error-details --config configs/webpack.server.js",

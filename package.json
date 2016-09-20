@@ -125,7 +125,7 @@
     "webpack-dev-server": "^2.1.0-beta"
   },
   "engines": {
-    "node": ">=4.4.0"
+    "node": ">=6.0.0"
   },
   "config": {
     "pre-git": {

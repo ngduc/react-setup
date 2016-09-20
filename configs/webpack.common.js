@@ -6,18 +6,32 @@ var postCssAutoprefixer = require('autoprefixer')
 
 module.exports = {
   module: {
-    loaders: [{
-      test: /\.json$/,
-      loaders: ['json']
-    }, {
-      // base.css has global css unaltered class names (postcss without modules option)
-      test: /\.base\.css$/,
-      loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap&&importLoaders=1!postcss'})
-    }, {
-      test: /\.css$/,
-      exclude: /\.base\.css$/,
-      loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap&&modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss'})
-    }],
+    loaders: [
+      {
+        test: /\.json$/,
+        loaders: ['json']
+      }, {
+        // base.css has global css unaltered class names (postcss without modules option)
+        test: /\.base\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: [
+            'css?sourceMap&&importLoaders=1',
+            'postcss'
+          ]
+        })
+      }, {
+        test: /\.css$/,
+        exclude: /\.base\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style',
+          loader: [
+            'css?sourceMap&&modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]',
+            'postcss'
+          ]
+        })
+      }
+    ],
     postLoaders: [{
       test: /\.js$/,
       exclude: /node_modules/,

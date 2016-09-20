@@ -24,7 +24,7 @@ module.exports = {
       loader: 'babel',
       query: {
         cacheDirectory: true,
-        presets: ['react', [ "es2015", { "modules": false } ], 'stage-0', 'react-hmre']
+        presets: ['react', [ "es2015", { "modules": false } ], 'stage-0']
       }
     }],
     noParse: /\.min\.js/

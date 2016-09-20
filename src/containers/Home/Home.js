@@ -8,10 +8,10 @@ import API from 'api'
 import { Msg } from './messages'
 import styles from './styles.css'
 
-const fragmentArr = [
-  { post: [ API.getPost, 1 ] },
-  { comments: [ API.listComments, 1 ] }
-]
+const fragmentObj = {
+  post: [API.getPost, 1],
+  comments: [API.listComments, 1]
+}
 
 class Home extends React.Component {
   state = {
@@ -20,12 +20,7 @@ class Home extends React.Component {
   }
 
   componentWillMount () {
-    // after routing back to this component, manually fetch data:
-    if (__CLIENT__ && !this.props.post) {
-      Utils.fetchFragmentsToState(fragmentArr, this)
-    } else {
-      this.setState(this.props)
-    }
+    Utils.fetchFragmentsToState(fragmentObj, this)
   }
 
   render () {
@@ -52,4 +47,4 @@ class Home extends React.Component {
   }
 }
 
-export default Utils.createTransmitContainer(Home, fragmentArr)
+export default Utils.createTransmitContainer(Home, fragmentObj)

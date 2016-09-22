@@ -2,7 +2,8 @@ import React from 'react'
 import { FormattedDate } from 'react-intl'
 
 import { ButtonGroup, Button } from 'react-bootstrap'
-import { BlogPost, Utils } from 'components'
+import { BlogPost } from 'components'
+import { Utils } from 'utils'
 import API from 'api'
 
 import { Msg } from './messages'

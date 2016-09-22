@@ -14,3 +14,15 @@ Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/
 
 * webpack: use 2.1.0-beta.22 because 2.1.0-beta.23 causes a build error with heroku (as of 09/20/2016)
   * https://github.com/webpack/webpack/issues/3018
+
+VERIFICATION
+
+Things need to be verified after upgrading dependencies:
+
+* Unit tests should work
+* Integration tests (if any) should work
+* Production build should have no error
+* Server-side rendering: no ajax request on initial page load
+* Routing: page should make ajax requests after routing
+* Development HMR: changes to components should be reflected to browser
+* I18n texts should be rendered correctly in different languages

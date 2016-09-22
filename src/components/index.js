@@ -1,6 +1,5 @@
 import BlogPost from './BlogPost/BlogPost'
 import AppNavBar from './AppNavBar/AppNavBar'
-import Utils from './Utils/Utils'
 
 /**
  * This is an index file for all components.
@@ -9,6 +8,5 @@ import Utils from './Utils/Utils'
  */
 module.exports = {
   BlogPost,
-  AppNavBar,
-  Utils
+  AppNavBar
 }

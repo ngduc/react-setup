@@ -1,5 +1,5 @@
 import { match } from 'react-router'
-import Transmit from 'react-setup-transmit'
+import Transmit from 'react-transmit'
 
 import routes from '../containers/routes'
 import { renderIndexPage } from './libs/index-page'

@@ -12,11 +12,11 @@ config.debug   = true
 config.devtool = 'cheap-module-eval-source-map'
 
 config.entry.unshift(
-  'webpack-dev-server/client?http://' + hostname + ':' + webpackPort,
+  'webpack-dev-server/client?https://' + hostname + ':' + webpackPort,
   'webpack/hot/only-dev-server'
 )
 
-config.output.publicPath = 'http://' + hostname + ':' + webpackPort + '/'
+config.output.publicPath = 'https://' + hostname + ':' + webpackPort + '/'
 config.output.hotUpdateMainFilename = 'update/[hash]/update.json'
 config.output.hotUpdateChunkFilename = 'update/[hash]/[id].update.js'
 

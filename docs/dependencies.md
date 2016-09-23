@@ -26,3 +26,5 @@ Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/
 
 * webpack: use 2.1.0-beta.22 because 2.1.0-beta.23 causes a build error with heroku (as of 09/20/2016)
   * https://github.com/webpack/webpack/issues/3018
+
+* http2: fixed to 3.3.4 for now. Version 3.3.5 has a launching error (assert...) (09/14/2016)

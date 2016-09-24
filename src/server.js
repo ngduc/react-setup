@@ -1,8 +1,6 @@
 require('babel-polyfill')
 require('server/libs/node-locales')
 
-import http2 from 'http2'
-import fs from 'fs'
 import Koa from 'koa'
 import Router from 'koa-router'
 import serveStatic from 'koa-serve-static'
@@ -18,11 +16,6 @@ import renderAppRouter from './server/renderAppRouter'
 const log = require('bunyan').createLogger({ name: 'app' })
 const hostname = process.env.HOSTNAME || 'localhost'
 const port = process.env.PORT || 8100
-
-const options = {
-  key: fs.readFileSync('./configs/server-key.pem', 'utf8'),
-  cert: fs.readFileSync('./configs/server.crt', 'utf8')
-}
 
 try {
   const app = new Koa()
@@ -40,10 +33,23 @@ try {
 
   app.use(serveStatic('static', {}))
 
-  http2.createServer(options, app.callback()).listen(port, () => {
-    log.info('==> ✅  Server is listening ===')
-    log.info('==> 🌎  Go to https://%s:%s ===', hostname, port)
-  })
+  // Enable this for HTTP2 & HTTPS (Heroku doesn't support free dyno with https - https://goo.gl/mS708W)
+  if (process.env.npm_package_config_protocol === 'https') {
+    const http2 = require('http2') // eslint-disable-line global-require
+    const fs = require('fs') // eslint-disable-line global-require
+    const options = {
+      key: fs.readFileSync('./configs/server-key.pem', 'utf8'),
+      cert: fs.readFileSync('./configs/server.crt', 'utf8')
+    }
+    const http2App = http2.createServer(options, app.callback())
+    http2App.listen(port, () => {
+      log.info('==> 🌎  Server is up at https://%s:%s ===', hostname, port)
+    })
+  } else {
+    app.listen(port, () => {
+      log.info('==> 🌎  Server is up at http://%s:%s ===', hostname, port)
+    })
+  }
 
   if (__DEV__) {
     if (module.hot) {

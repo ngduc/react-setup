@@ -10,7 +10,8 @@ const serviceUrl = () => {
     // return 'http://jsonplaceholder.typicode.com'
     const hostname = process.env.HOSTNAME || 'localhost'
     const port = process.env.PORT || 8100
-    return `https://${hostname}:${port}/api-proxy`
+    const protocol = process.env.npm_package_config_protocol + ':'
+    return `${protocol}//${hostname}:${port}/api-proxy`
   }
   if (__CLIENT__) {
     const { protocol, hostname, port } = window.location

@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -38,7 +38,7 @@
     "watch-server": "webpack --watch --colors --display-error-details --config configs/webpack.server-watch.js",
     "watch-server-start": "just-wait -t 60 --pattern \"dist/*.js\" && npm run start-forever",
     "watch-client": "webpack --watch --colors --display-error-details --config configs/webpack.client-watch.js",
-    "watch-client-dev": "webpack-dev-server --https --config configs/webpack.client-watch.js",
+    "watch-client-dev": "webpack-dev-server $npm_package_config_webpackProtocol --config configs/webpack.client-watch.js",
     "dev": "npm run clean && concurrently --kill-others \"npm run watch-server-start\" \"npm run watch-server\" \"npm run watch-client\" \"npm run watch-client-dev\"",
     "test": "NODE_PATH=./src mocha --require ./tools/test/test-init --compilers js:babel-core/register ./src/**/*.spec.js --recursive",
     "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover --verbose --report text --report html _mocha -- --require ./tools/test/test-init ./src/**/*.spec.js",
@@ -130,6 +130,8 @@
     "node": ">=4.4.0"
   },
   "config": {
+    "protocol": "http",
+    "webpackProtocol": "",
     "pre-git": {
       "commit-msg": "conventional",
       "pre-commit": [

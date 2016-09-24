@@ -5,6 +5,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var config = require('./webpack.client.js')
 var hostname = process.env.HOSTNAME || 'localhost'
+var protocol = process.env.npm_package_config_protocol
+
 var webpackPort = 8199
 
 config.cache   = true
@@ -12,11 +14,11 @@ config.debug   = true
 config.devtool = 'cheap-module-eval-source-map'
 
 config.entry.unshift(
-  'webpack-dev-server/client?https://' + hostname + ':' + webpackPort,
+  'webpack-dev-server/client?' + protocol + '://' + hostname + ':' + webpackPort,
   'webpack/hot/only-dev-server'
 )
 
-config.output.publicPath = 'https://' + hostname + ':' + webpackPort + '/'
+config.output.publicPath = protocol + '://' + hostname + ':' + webpackPort + '/'
 config.output.hotUpdateMainFilename = 'update/[hash]/update.json'
 config.output.hotUpdateChunkFilename = 'update/[hash]/[id].update.js'
 
@@ -25,7 +27,9 @@ config.plugins = [
     from: '../src/static',
     to: '../static'   // copy to dist/views
   }]),
-  new webpack.DefinePlugin({ __CLIENT__: true, __SERVER__: false, __PRODUCTION__: false, __DEV__: true }),
+  new webpack.DefinePlugin({
+    __CLIENT__: true, __SERVER__: false, __PRODUCTION__: false, __DEV__: true
+  }),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
   new ExtractTextPlugin('../static/[name].css')

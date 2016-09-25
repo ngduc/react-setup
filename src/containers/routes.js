@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route } from 'react-router'
+import { Router, Route, IndexRoute } from 'react-router'
 
 import App from './App/App'
 import Home from './Home/Home'
@@ -10,8 +10,8 @@ import About from './About/About'
  */
 module.exports = (
   <Router>
-    <Route component={App}>
-      <Route path="/" component={Home}/>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
       <Route path="/home" component={Home}/>
       <Route path="/about" component={About}/>
     </Route>

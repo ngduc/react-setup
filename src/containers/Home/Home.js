@@ -7,7 +7,7 @@ import { Utils } from 'utils'
 import API from 'api'
 
 import { Msg } from './messages'
-import styles from './styles.css'
+import css from './Home.css'
 
 const fragmentObj = {
   post: [API.getPost, 1],
@@ -26,7 +26,7 @@ class Home extends React.Component {
 
   render () {
     return (
-      <section className={styles.home}>
+      <section className={css.main}>
         <h3><Msg s="title"/></h3>
         <p><Msg s="welcome" values={{ page: 'Home Page' }}/></p>
         <p><Msg s="today"/> <FormattedDate value={ new Date() } day="numeric" month="numeric" year="numeric" /></p>

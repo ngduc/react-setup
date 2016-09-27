@@ -35,7 +35,9 @@ export default function renderAppRouter () {
 
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
           const renderedHtml = renderIndexPage(locale, reactString)
-          const output = Transmit.injectIntoMarkup(renderedHtml, reactData, [`${webserver}/client.js?${__VER__}`])
+          const output = Transmit.injectIntoMarkup(
+            renderedHtml, reactData, [`${webserver}/client.js?${__webpack_hash__()}`]
+          )
           ctx.body = output
           resolve()
         })

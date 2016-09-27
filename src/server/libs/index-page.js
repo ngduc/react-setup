@@ -20,7 +20,7 @@ function renderIndexPage (locale, reactString) {
   const i18nDataString = JSON.stringify(i18nData)
 
   const data = {
-    ver: '' + __VER__,
+    ver: '' + __webpack_hash__, // eslint-disable-line camelcase
     i18nDataString,
     reactString,
     trackingCode: trackingCodeFileContent

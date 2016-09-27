@@ -6,7 +6,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var config = require('./webpack.client.js')
 var hostname = process.env.HOSTNAME || 'localhost'
 var protocol = process.env.npm_package_config_protocol
-const time = new Date().toISOString().slice(0,19)
 
 var webpackPort = 8199
 
@@ -29,8 +28,9 @@ config.plugins = [
     to: '../static'   // copy to dist/views
   }]),
   new webpack.DefinePlugin({
-    __CLIENT__: true, __SERVER__: false, __PRODUCTION__: false, __DEV__: true, __VER__: `"${time}"`
+    __CLIENT__: true, __SERVER__: false, __PRODUCTION__: false, __DEV__: true,
   }),
+  new webpack.ExtendedAPIPlugin(), // for __webpack_hash__
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
   new ExtractTextPlugin('../static/[name].css')

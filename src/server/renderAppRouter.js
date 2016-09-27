@@ -9,6 +9,8 @@ import { createRouterContextDataWrapper } from './libs/RouterContextDataWrapper'
 const hostname = process.env.HOSTNAME || 'localhost'
 const IGNORED_FILES = ['/favicon.ico']
 const webpackPort = 8199
+const webpackHash =
+  (typeof __webpack_hash__ === 'function' ? __webpack_hash__() : __webpack_hash__) // eslint-disable-line camelcase
 
 export default function renderAppRouter () {
   return (ctx, next) => new Promise((resolve, reject) => {
@@ -36,7 +38,7 @@ export default function renderAppRouter () {
         Transmit.renderToString(RouterContextDataWrapper, renderProps).then(({ reactString, reactData }) => {
           const renderedHtml = renderIndexPage(locale, reactString)
           const output = Transmit.injectIntoMarkup(
-            renderedHtml, reactData, [`${webserver}/client.js?${__webpack_hash__()}`]
+            renderedHtml, reactData, [`${webserver}/client.js?${webpackHash}`]
           )
           ctx.body = output
           resolve()

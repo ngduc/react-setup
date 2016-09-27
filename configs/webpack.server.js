@@ -5,6 +5,7 @@ var fs = require('fs')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var commonConfig = require('./webpack.common')
+const time = new Date().toISOString().slice(0,19)
 
 var config = {
 	target: 'node',
@@ -22,7 +23,9 @@ var config = {
       from: '../src/server/views',
       to: './views'   // copy to dist/views
     }]),
-    new webpack.DefinePlugin({ __CLIENT__: false, __SERVER__: true, __PRODUCTION__: true, __DEV__: false }),
+    new webpack.DefinePlugin({
+      __CLIENT__: false, __SERVER__: true, __PRODUCTION__: true, __DEV__: false, __VER__: `"${time}"`
+    }),
     new ExtractTextPlugin('../static/[name].css')
 	],
 	externals: [nodeExternals({

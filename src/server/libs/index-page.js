@@ -20,6 +20,7 @@ function renderIndexPage (locale, reactString) {
   const i18nDataString = JSON.stringify(i18nData)
 
   const data = {
+    ver: '' + __VER__,
     i18nDataString,
     reactString,
     trackingCode: trackingCodeFileContent

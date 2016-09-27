@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 import { Msg } from './messages'
-import styles from './styles.css'
+import css from './AppNavBar.css'
 
 export default class AppNavBar extends React.Component {
   static contextTypes = {
@@ -13,9 +13,9 @@ export default class AppNavBar extends React.Component {
     // this.props.routerProps
     // this.context.router.push({ pathname: '/about', query: {}, state: null })
     return (
-      <nav className={`globalNav ${styles.nav}`}>
-        <Link to="/home" activeClassName={styles.navActive}><Msg s="navHome"/></Link>
-        <Link to="/about" activeClassName={styles.navActive}><Msg s="navAbout"/></Link>
+      <nav className={`globalNav ${css.nav}`}>
+        <Link to="/home" activeClassName={css.navActive}><Msg s="navHome"/></Link>
+        <Link to="/about" activeClassName={css.navActive}><Msg s="navAbout"/></Link>
       </nav>
     )
   }

@@ -3,7 +3,7 @@ require('server/libs/node-locales')
 
 import Koa from 'koa'
 import Router from 'koa-router'
-import serveStatic from 'koa-serve-static'
+import koaStaticCache from 'koa-static-cache'
 import koaConvert from 'koa-convert'
 import koaCompress from 'koa-compress'
 import koaBetterBody from 'koa-better-body'
@@ -22,6 +22,7 @@ try {
   app.keys = ['seekreet', 'r3act-s3tup-k3y']
 
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
+  app.use(koaConvert(koaStaticCache('static', { gzip: true, maxAge: 1 * 24 * 60 * 60 })))
   app.use(koaConvert(koaSession(app)))
   app.use(koaBetterBody())
 
@@ -30,8 +31,6 @@ try {
   const router = new Router()
   router.get('/(.*)', renderAppRouter())
   app.use(router.routes())
-
-  app.use(serveStatic('static', {}))
 
   // Enable this for HTTP2 & HTTPS (Heroku doesn't support free dyno with https - https://goo.gl/mS708W)
   if (process.env.npm_package_config_protocol === 'https') {

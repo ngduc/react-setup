@@ -35,6 +35,23 @@ config.plugins = [
   new ExtractTextPlugin('../static/[name].css')
 ]
 
+config.module.loaders = [
+  {
+    test: /\.json$/,
+    exclude: /node_modules/,
+    loaders: ['json']
+  }, {
+    // *.base.css has global css unaltered class names (postcss without modules option)
+    test: /\.base\.css$/,
+    exclude: /node_modules/,
+    loader: 'style!css?sourceMap&&importLoaders=1!postcss?sourceMap'
+  }, {
+    test: /\.css$/,
+    exclude: [ /node_modules/, /\.base\.css$/ ],
+    loader: 'style!css?sourceMap&&modules&&importLoaders=1&localIdentName=[name]---[local]---[hash:base64:5]!postcss?sourceMap'
+  }
+]
+
 config.module.postLoaders = [
   {
     test: /\.js$/,

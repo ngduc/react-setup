@@ -1,5 +1,7 @@
 import React from 'react'
 import { addLocaleData, IntlProvider } from 'react-intl'
+import { RouteTransition } from 'react-router-transition'
+import { spring } from 'react-motion'
 
 import { AppNavBar } from 'components'
 import 'styles/styles.base.css'
@@ -39,7 +41,15 @@ export default class App extends React.Component {
         <div>
           <AppNavBar routerProps={this.props}/>
 
-          {this.props.children}
+          <RouteTransition
+            pathname={this.props.location.pathname}
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: spring(1, { stiffness: 200, damping: 22 } ) }}
+            atActive={{ opacity: spring(1, { stiffness: 200, damping: 22 } ) }}>
+            {/* Component (which is mapped in "routes.js") will be loaded here  */}
+              {this.props.children}
+          </RouteTransition>
+
         </div>
       </IntlProvider>
     )

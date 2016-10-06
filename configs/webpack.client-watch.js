@@ -11,7 +11,7 @@ var webpackPort = 8199
 
 config.cache   = true
 config.debug   = true
-config.devtool = 'cheap-module-eval-source-map'
+config.devtool = 'inline-source-map' // 'cheap-module-eval-source-map'
 
 config.entry.unshift(
   'webpack-dev-server/client?' + protocol + '://' + hostname + ':' + webpackPort,

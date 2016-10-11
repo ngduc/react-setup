@@ -24,7 +24,7 @@ try {
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
   app.use(koaConvert(koaStaticCache('static', { gzip: true, maxAge: 1 * 24 * 60 * 60 })))
   app.use(koaConvert(koaSession(app)))
-  app.use(koaBetterBody())
+  app.use(koaBetterBody({ textLimit: '5mb', formLimit: '5mb', jsonLimit: '5mb' }))
 
   app.use(apiRouter())
 

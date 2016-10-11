@@ -14,7 +14,7 @@ Things need to be verified after upgrading dependencies:
 
 NOTES
 
-* postcss-import: use 8.0.2 because 8.1.2 causes this error (as of 09/16/2016)
+* postcss-import: pinned to 8.0.2 because 8.1.2 causes this error (as of 09/16/2016)
 
 ```
 Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/duc/Documents/work/react-setup/object-assign'
@@ -24,7 +24,7 @@ Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/
 [1]  @ multi main
 ```
 
-* webpack: use 2.1.0-beta.22 because 2.1.0-beta.23 causes a build error with heroku (as of 09/20/2016)
+* webpack: pinned to 2.1.0-beta.22 because 2.1.0-beta.23 causes a build error with heroku (as of 09/20/2016)
   * https://github.com/webpack/webpack/issues/3018
 
-* http2: fixed to 3.3.4 for now. Version 3.3.5 has a launching error (assert...) (09/14/2016)
+* http2: pinned to 3.3.4 for now. Version 3.3.5 has a launching error (assert...) (09/14/2016)

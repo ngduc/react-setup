@@ -1,9 +1,12 @@
 import fetchPlus from 'fetch-plus'
 import plusJson from 'fetch-plus-json'
 
+// always import this 'isomorphic-fetch' so it's available for fetch-plus (otherwise, error)
+import isomorphicFetch from 'isomorphic-fetch' // eslint-disable-line no-unused-vars
+
 const serviceUrl = () => {
   if (__SERVER__) {
-    // node-fetch (fetch-plus > isomorphic-fetch > node-fetch) will give error without this.
+    // for https, node-fetch (fetch-plus > isomorphic-fetch > node-fetch) will give error without this.
     // (failed, reason: self signed certificate)
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 

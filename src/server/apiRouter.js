@@ -1,10 +1,9 @@
 import Router from 'koa-router'
-import fetch from 'isomorphic-fetch' // eslint-disable-line no-unused-vars
 
 export default function () {
   const router = new Router()
 
-  router.get('/api-proxy/(.*)', (ctx, next) => new Promise((resolve, reject) => {
+  router.get('/api-proxy/(.*)', async (ctx) => {
     const urlParams = ctx.request.url.replace(/\/api\-proxy/, '')
     /* --- comment this out to use jsonplaceholder's API example:
     fetch('http://jsonplaceholder.typicode.com' + urlParams)
@@ -24,8 +23,7 @@ export default function () {
       json = { id: 1, title: 'My first blog post' }
     }
     ctx.body = json
-    resolve()
-  }))
+  })
 
   /* - More examples:
   router.get('/api/count', async (ctx, next) => {

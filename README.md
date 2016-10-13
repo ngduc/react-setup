@@ -3,7 +3,7 @@
 
 I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
 
-[Live Demo](https://desolate-journey-31601.herokuapp.com/) (Heroku may take up to 1 min to launch)
+[Live Demo](http://45.56.126.43:8100/home)
 
 [![Circle CI](https://circleci.com/gh/ngduc/react-setup.svg?style=svg)](https://circleci.com/gh/ngduc/react-setup) [![Dependencies Status](https://david-dm.org/ngduc/react-setup.svg)](https://david-dm.org/ngduc/react-setup)
 

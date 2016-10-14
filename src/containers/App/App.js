@@ -46,8 +46,10 @@ export default class App extends React.Component {
             atEnter={{ opacity: 0 }}
             atLeave={{ opacity: spring(1, { stiffness: 200, damping: 22 } ) }}
             atActive={{ opacity: spring(1, { stiffness: 200, damping: 22 } ) }}>
-            {/* Component (which is mapped in "routes.js") will be loaded here  */}
-              {this.props.children}
+
+            {/* Component (which is mapped in "routes.js") will be loaded here. More props can also be passed in. */}
+            {React.cloneElement(this.props.children, { ...this.props })}
+
           </RouteTransition>
 
         </div>

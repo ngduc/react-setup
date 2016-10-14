@@ -14,7 +14,8 @@ Things need to be verified after upgrading dependencies:
 
 NOTES
 
-* postcss-import: pinned to 8.0.2 because 8.1.2 causes this error (as of 09/16/2016)
+* postcss-import: pinned to 8.1.0. Newer version causes this error (10/12/2016)
+    Error: ENOENT: no such file or directory, open '/Users/duc/Documents/wings/wingsui/object-assign'
 
 ```
 Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/duc/Documents/work/react-setup/object-assign'

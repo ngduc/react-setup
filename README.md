@@ -17,11 +17,11 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Code coverage with [Isparta](https://github.com/douglasduteil/isparta)
 * Debug ES6 code with Webpack 2
 * ESLint ES6 configuration
-* Style guide: [JS Standard Style](docs/style-guide.md) - Want [semicolons?](docs/style-guide.md)
+* Style guide: [JS Standard Style](docs/style-guide.md)
 * Docker - build & launch your project - [Instructions](docs/docker.md)
 * Development: HMR (Hot Module Replacement) for both client & server
 * Production ready
-* Miscellaneous features: react-router-transition, pre-git, bunyan, mustache, GA tracking code, etc.
+* Miscellaneous features: react-router-transition, react-jsonschema-form, pre-git, bunyan, mustache, GA tracking code, etc.
 
 ## Documentation
 

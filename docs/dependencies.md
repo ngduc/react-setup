@@ -17,7 +17,7 @@ NOTES
 * koa-better-body: use ^2.0.1 because ^3.0.0 causes issues with session (for login) (10/14/2016). Need investigation.
 
 * postcss-import: pinned to 8.1.0. Newer version causes this error (10/12/2016)
-    Error: ENOENT: no such file or directory, open '/Users/duc/Documents/wings/wingsui/object-assign'
+  * https://github.com/postcss/postcss-import/issues/207
 
 ```
 Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/duc/Documents/work/react-setup/object-assign'

@@ -22,7 +22,7 @@ try {
   app.keys = ['seekreet', 'r3act-s3tup-k3y']
 
   app.use(koaCompress({ flush: zlib.Z_SYNC_FLUSH }))
-  app.use(koaConvert(koaStaticCache('static', { gzip: true, maxAge: 1 * 24 * 60 * 60 })))
+  app.use(koaConvert(koaStaticCache('static', { gzip: true, maxAge: 14 * 24 * 60 * 60 }))) // 2 weeks
   app.use(koaConvert(koaSession(app)))
   app.use(koaBetterBody({ textLimit: '5mb', formLimit: '5mb', jsonLimit: '5mb' }))
 

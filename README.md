@@ -20,6 +20,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Style guide: [JS Standard Style](docs/style-guide.md)
 * Docker - build & launch your project - [Instructions](docs/docker.md)
 * Development: HMR (Hot Module Replacement) for both client & server
+* HTTPS & HTTP2
 * Production ready
 * Miscellaneous features: react-router-transition, react-jsonschema-form, pre-git, bunyan, mustache, GA tracking code, etc.
 

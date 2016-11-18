@@ -5,7 +5,7 @@ export default class Utils {
    * Find a parent element by traversing up.
    * @param {Object} child - DOM element.
    * @param {string} selector - Selector to find parent. e.g. '#id123' or '.content' or 'div'.
-   * @returns {Object} - Return parent dom element.
+   * @returns {Object} - Return parent dom element (return itself if it satisfies the selector).
    */
   static findParentByChild (child, selector) {
     let el = child
@@ -14,7 +14,6 @@ export default class Utils {
     if (isId || isClassName) {
       selector = selector.slice(1)
     }
-    el = el.parentElement
     while (el) {
       const classes = el.getAttribute('class')
       if ((isId && el.getAttribute('id') === selector) ||
@@ -86,7 +85,7 @@ export default class Utils {
   /**
    * Helper function to wrap Component with Transmit Container to fetch fragments for server rendering.
    * @param {Class} Component - Component to wrap.
-   * @param {Array} fragmentArr - Array of fragments which declare functions to fetch data.
+   * @param {Array} fragmentObj - Object of fragments which declare functions to fetch data.
    * @returns {Object} - Transmit Container.
    */
   static createTransmitContainer (Component, fragmentObj) {

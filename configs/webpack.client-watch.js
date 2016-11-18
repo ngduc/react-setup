@@ -66,6 +66,7 @@ config.module.postLoaders = [
 
 config.devServer = {
   publicPath: config.output.publicPath,
+  contentBase: "static",
   hot: true,
   inline: false,
   lazy: false,

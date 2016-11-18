@@ -22,7 +22,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Development: HMR (Hot Module Replacement) for both client & server
 * HTTPS & HTTP2
 * Production ready
-* Miscellaneous features: react-router-transition, react-jsonschema-form, pre-git, bunyan, mustache, GA tracking code, etc.
+* Miscellaneous features: yarn, react-router-transition, react-jsonschema-form, pre-git, bunyan, mustache, GA tracking code, etc.
 
 ## Documentation
 
@@ -41,24 +41,27 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 
 **Install**
 ```
-npm install -g babel-cli
-npm install
+$ npm install -g babel-cli
+$ npm install
+
+OR
+$ yarn
 ```
 
 **Start DEV mode with Hot-Module-Replacement**
 ```
-npm run dev
+$ npm run dev
 ```
 
 **Run tests**
 ```
-npm test
-npm run test-cov
+$ npm test
+$ npm run test-cov
 ```
 
 **Build & Start PRODUCTION**
 ```
-npm run build && npm start
+$ npm run build && npm start
 ```
 
 ## Contributing

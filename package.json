@@ -31,7 +31,7 @@
   "scripts": {
     "start": "npm run build && node --harmony ./dist/server.js",
     "start-forever": "forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
-    "start-forever-background": "forever start --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
+    "start-forever-background": "NODE_ENV=production forever stop 'reactsetup' || true && forever start --uid 'reactsetup' -l reactsetup.log --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
     "build-msg": "babel --plugins react-intl src/**/messages.js && babel-node tools/scripts/translate.js",
     "build-server": "webpack --colors --display-error-details --config configs/webpack.server.js",
     "build-client": "webpack --colors --display-error-details --config configs/webpack.client.js",

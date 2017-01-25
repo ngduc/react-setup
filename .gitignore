@@ -2,6 +2,7 @@
 node_modules/
 /dist/
 /static/
+/storybook-static/
 .DS_Store
 *.lock
 *.log

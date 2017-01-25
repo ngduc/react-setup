@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
-  "description": "A Universal React setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Webpack HMR, PostCSS, ESLint.",
-  "version": "3.9.0",
+  "description": "A Universal React Setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack 2, Storybook, InlineCSS/PostCSS, ESLint, HTTPS & HTTP2.",
+  "version": "3.9.2",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -45,7 +45,9 @@
     "test-cov": "NODE_PATH=./src babel-node $(npm bin)/isparta cover --verbose --report text --report html _mocha -- --require ./tools/test/test-init ./src/**/*.spec.js",
     "lint": "eslint .",
     "clean": "rm -rf ./dist && rm -rf ./static",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "autoprefixer": "^6.5.3",
@@ -130,7 +132,8 @@
     "react-proxy": "^1.1.8",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
-    "teaspoon": "^6.4.1"
+    "teaspoon": "^6.4.1",
+    "@kadira/storybook": "^2.21.0"
   },
   "engines": {
     "node": ">=4.4.0"

@@ -59,8 +59,11 @@ export default class Utils {
    *   @callback callbackFn
    *   @param {string} callbackFn.key - Fragment key.
    *   @param {Object} callbackFn.data - Fragment data.
+   *   @param {allDoneFn} [allDoneFn] - Callback function when all requests completed.
    */
-  static fetchFragmentsToState (fragmentObj, ctx, callbackFn) {
+  static fetchFragmentsToState (fragmentObj, ctx, callbackFn, allDoneFn) {
+    let counter = 0
+    const allData = {}
     const keys = fragmentObj ? Object.keys(fragmentObj) : []
 
     if (__CLIENT__ && keys.length > 0 && !ctx.props[ keys[0] ]) {
@@ -71,9 +74,16 @@ export default class Utils {
         fn( fnParams ).then(data => {
           const state = {}
           state[ key ] = data
+          allData[ key ] = data
           ctx.setState(state)
           if (callbackFn) {
             callbackFn(key, data) // invoke the callback function when each request is done.
+          }
+          counter++
+          if (counter === keys.length) {
+            if (allDoneFn) {
+              allDoneFn(allData)
+            }
           }
         })
       }

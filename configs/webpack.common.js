@@ -11,7 +11,8 @@ module.exports = {
         test: /\.json$/,
         exclude: /node_modules/,
         loaders: ['json']
-      }, {
+      },
+      {
         // base.css has global css unaltered class names (postcss without modules option)
         test: /\.base\.css$/,
         exclude: /node_modules/,
@@ -22,7 +23,8 @@ module.exports = {
             'postcss'
           ]
         })
-      }, {
+      },
+      {
         test: /\.css$/,
         exclude: [ /node_modules/, /\.base\.css$/ ],
         loader: ExtractTextPlugin.extract({

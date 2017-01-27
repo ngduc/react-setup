@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React Setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack 2, Storybook, InlineCSS/PostCSS, ESLint, HTTPS & HTTP2.",
-  "version": "3.9.2",
+  "version": "3.9.5",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -68,7 +68,7 @@
     "concurrently": "^3.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
     "fetch-plus": "^3.10.4",
     "fetch-plus-bearerauth": "^3.10.4",
     "fetch-plus-json": "^3.10.4",

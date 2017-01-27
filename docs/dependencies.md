@@ -32,8 +32,16 @@ Module build failed: (SystemJS) ENOENT: no such file or directory, open '/Users/
   
 * webpack-dev-server: pinned to 2.1.0-beta.10, newer versions cause this error: (11/18/2016)
 
+* extract-text-webpack-plugin: pinned to 2.0.0-beta.4, otherwise 'npm run dev' throws build error (01/27/2017)
+
 ```
 webpack.validateSchema is not a function
 ```
 
 * http2: pinned to 3.3.4 for now. Version 3.3.5 has a launching error (assert...) (09/14/2016)
+
+EXPECTED
+
+Expected console screenshot from $ npm run dev
+
+<img src="https://github.com/ngduc/react-setup/blob/master/docs/assets/demo-inspect.png">

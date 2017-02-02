@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var WebpackBuildNotifierPlugin = require('webpack-build-notifier')
 
 var config = require('./webpack.client.js')
 var hostname = process.env.HOSTNAME || 'localhost'
@@ -32,7 +33,10 @@ config.plugins = [
   }),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
-  new ExtractTextPlugin('../static/[name].css')
+  new ExtractTextPlugin('../static/[name].css'),
+  new WebpackBuildNotifierPlugin({
+    title: 'React-setup'
+  })
 ]
 
 config.module.loaders = [

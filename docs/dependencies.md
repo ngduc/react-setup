@@ -1,6 +1,6 @@
 # NPM Dependencies
 
-VERIFICATION
+**VERIFICATION**
 
 Things need to be verified after upgrading dependencies:
 
@@ -12,7 +12,7 @@ Things need to be verified after upgrading dependencies:
 * Development HMR: changes to components should be reflected to browser
 * I18n texts should be rendered correctly in different languages
 
-NOTES
+**NOTES**
 
 * koa-better-body: use ~2.0.1 because ^3.0.0 causes issues with session (for login) (10/14/2016). Need investigation.
 
@@ -40,7 +40,7 @@ webpack.validateSchema is not a function
 
 * http2: pinned to 3.3.4 for now. Version 3.3.5 has a launching error (assert...) (09/14/2016)
 
-EXPECTED
+**EXPECTED**
 
 Expected console screenshot from $ npm run dev
 

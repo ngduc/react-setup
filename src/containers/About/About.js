@@ -18,7 +18,7 @@ const uiSchema = {
 export default class About extends React.Component {
 
   onSubmit = (ev) => {
-    alert(`Thank you ${ev.formData.name}!`)
+    alert(`Hi ${ev.formData.name}, this is just an example.\nData will not be submitted.\nIf you want to contact me, please file a Github issue.`)
   }
 
   render () {

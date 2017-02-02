@@ -1,7 +1,7 @@
 {
   "name": "react-setup",
   "description": "A Universal React Setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack 2, Storybook, InlineCSS/PostCSS, ESLint, HTTPS & HTTP2.",
-  "version": "3.9.5",
+  "version": "3.9.8",
   "author": "Duc Nguyen (https://github.com/ngduc)",
   "license": "MIT",
   "homepage": "https://github.com/ngduc/react-setup",
@@ -31,7 +31,7 @@
   "scripts": {
     "start": "npm run build && node --harmony ./dist/server.js",
     "start-forever": "forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
-    "start-forever-background": "forever stop 'reactsetup' || true && NODE_ENV=production forever start --uid 'reactsetup' -l reactsetup.log --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
+    "start-forever-background": "forever stop 'reactsetup' || true && NODE_ENV=production forever start --uid 'reactsetup' -l reactsetup.log --append --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
     "build-msg": "babel --plugins react-intl src/**/messages.js && babel-node tools/scripts/translate.js",
     "build-server": "webpack --colors --display-error-details --config configs/webpack.server.js",
     "build-client": "webpack --colors --display-error-details --config configs/webpack.client.js",
@@ -46,7 +46,7 @@
     "lint": "eslint .",
     "clean": "rm -rf ./dist && rm -rf ./static",
     "commit": "commit-wizard",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./src/static -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -117,10 +117,12 @@
     "serialize-javascript": "^1.3.0",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.22",
+    "webpack-build-notifier": "^0.1.13",
     "webpack-dev-server": "2.1.0-beta.10",
     "webpack-node-externals": "^1.5.4"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
     "chai": "^3.5.0",
     "eslint": "^3.10.2",
     "eslint-plugin-jsdoc": "^2.3.1",
@@ -132,8 +134,7 @@
     "react-proxy": "^1.1.8",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
-    "teaspoon": "^6.4.1",
-    "@kadira/storybook": "^2.21.0"
+    "teaspoon": "^6.4.1"
   },
   "engines": {
     "node": ">=4.4.0"

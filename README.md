@@ -1,7 +1,7 @@
 # React-Setup
 **A Universal React Setup with i18n: Babel 6, Koa 2, React, React Router, React Transmit, React Bootstrap, React-intl, Mocha, Isparta, Webpack 2, Storybook, InlineCSS/PostCSS, ESLint, HTTPS & HTTP2.**
 
-I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, Passport, etc.) to bake your project :)
+I prefer to keep this setup trim but feel free to sprinkle some more pixie dust (Redux, MobX, Passport, etc.) to bake your project :)
 
 [Live Demo](http://45.56.126.43:8100/home)
 

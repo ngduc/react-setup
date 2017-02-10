@@ -13,7 +13,8 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "mocha": true
   },
   "rules": {
     // Common js rules
@@ -28,12 +29,12 @@
     "indent": [2, 2, {"SwitchCase": 1}],
     "new-cap": 2,
     "quotes": [2, "single"],
-    "max-depth": [2, 3],
+    "max-depth": [2, 4],
     "max-statements": [2, 45],
     "max-len": [2, 150],
     "no-eq-null": 2,
     "operator-linebreak": 2,
-    "no-multiple-empty-lines": [2, { max: 2 }],
+    "no-multiple-empty-lines": [2, { "max": 2 }],
     "no-mixed-spaces-and-tabs": 2,
     "space-unary-ops": 2,
     "no-multi-spaces": 2,
@@ -45,12 +46,15 @@
     "comma-spacing": [2, { "before": false, "after": true }],
     "no-trailing-spaces": 2,
     "comma-dangle": 2,
+    "comma-style": ["error", "last"],
     "wrap-iife": 2,
     "no-extra-semi": 2,
     "semi-spacing": 2,
     "semi": [2, "never"],
     "spaced-comment": 2,
     "func-names": 2,
+    "key-spacing": [ 2, { "beforeColon": false, "afterColon": true } ],
+    "no-cond-assign": ["error", "always"],
 
     // NodeJs rules
     "block-scoped-var": 2,

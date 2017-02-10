@@ -21,7 +21,7 @@ I prefer to keep this setup trim but feel free to sprinkle some more pixie dust 
 * Docker - build & launch your project - [Instructions](docs/docker.md)
 * Development: HMR (Hot Module Replacement) for both client & server
 * [Storybook](https://github.com/storybooks/react-storybook) - list your components with HMR
-* HTTPS & HTTP2
+* HTTPS & HTTP2 for faster requests
 * Production ready
 * Miscellaneous features: yarn, react-router-transition, react-jsonschema-form, pre-git, bunyan, mustache, GA tracking code, etc.
 

@@ -34,7 +34,7 @@ try {
 
   // Enable this for HTTP2 & HTTPS (Heroku doesn't support free dyno with https - https://goo.gl/mS708W)
   if (process.env.npm_package_config_protocol === 'https') {
-    const http2 = require('http2') // eslint-disable-line global-require
+    const http2 = require('spdy') // eslint-disable-line global-require
     const fs = require('fs') // eslint-disable-line global-require
     const options = {
       key: fs.readFileSync('./configs/server-key.pem', 'utf8'),

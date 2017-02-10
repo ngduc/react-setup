@@ -4,6 +4,5 @@ node_modules/
 /static/
 /storybook-static/
 .DS_Store
-*.lock
 *.log
 temp.*

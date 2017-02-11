@@ -1,3 +1,9 @@
+@import '../../styles/vars.css';
+
 .main {
-  color: darkblue;
+  color: $TEXT_COLOR;
+
+  .header {
+    color: $HEADER_COLOR;
+  }
 }

@@ -27,7 +27,7 @@ class Home extends React.Component {
   render () {
     return (
       <section className={css.main}>
-        <h3><Msg s="title"/></h3>
+        <h3 className={css.header}><Msg s="title"/></h3>
         <p><Msg s="welcome" values={{ page: 'Home Page' }}/></p>
         <p><Msg s="today"/> <FormattedDate value={ new Date() } day="numeric" month="numeric" year="numeric" /></p>
         <ul>
